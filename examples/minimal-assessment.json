@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "title": "AI Fluency Review",
+    "summary": "This example shows the report structure using fictional observations.",
+    "generated_on": "2026-01-15",
+    "coverage_note": "Fictional example data for package validation."
+  },
+  "reliability": {
+    "confidence": "medium",
+    "coverage_summary": "Two fictional task contexts include attributable human and agent actions.",
+    "limitations": ["The example is intentionally small and does not support a Very strong rating."]
+  },
+  "interaction_events": [
+    {
+      "id": "example-open",
+      "timestamp": "2026-01-12T09:00:00Z",
+      "action": "artifact_open",
+      "artifact_id": "example-report",
+      "actor": "human",
+      "actor_basis": "event_origin",
+      "provenance_confidence": "high",
+      "summary": "The person opened the draft report.",
+      "source": "private://example/open",
+      "diff_ref": ""
+    },
+    {
+      "id": "example-agent-edit",
+      "timestamp": "2026-01-12T09:03:00Z",
+      "action": "edit",
+      "artifact_id": "example-report",
+      "actor": "agent",
+      "actor_basis": "tracked_change",
+      "provenance_confidence": "high",
+      "summary": "The agent drafted a revision.",
+      "source": "private://example/agent-edit",
+      "diff_ref": "private://example/diff/agent"
+    },
+    {
+      "id": "example-human-edit",
+      "timestamp": "2026-01-12T09:07:00Z",
+      "action": "edit",
+      "artifact_id": "example-report",
+      "actor": "human",
+      "actor_basis": "tracked_change",
+      "provenance_confidence": "high",
+      "summary": "The person revised the success criteria.",
+      "source": "private://example/human-edit",
+      "diff_ref": "private://example/diff/human"
+    }
+  ],
+  "areas": [
+    {
+      "id": "description",
+      "label": "Description",
+      "definition": "Give AI a clear goal, useful context, limits, and audience.",
+      "score": 4,
+      "confidence": "medium",
+      "strength": "States the intended result and important limits.",
+      "practice": "Some complex requests omit a clear completion check.",
+      "next_step": "Add one sentence defining what finished work must show.",
+      "evidence": [{"date":"2026-01-12","summary":"Defined the result and limits before the task began.","source":"private://example/description"}]
+    },
+    {
+      "id": "delegation",
+      "label": "Delegation",
+      "definition": "Choose what AI should do, what the person should keep, and who checks the result.",
+      "score": 3,
+      "confidence": "medium",
+      "strength": "Keeps final approval with the person.",
+      "practice": "Reviewer ownership is not always explicit.",
+      "next_step": "Name one owner and one checker for each major deliverable.",
+      "evidence": []
+    },
+    {
+      "id": "discernment",
+      "label": "Discernment",
+      "definition": "Question AI output and identify weak, missing, or unsupported claims.",
+      "score": 4,
+      "confidence": "medium",
+      "strength": "Challenges unsupported claims before accepting the result.",
+      "practice": "Rejection criteria are sometimes added after the first draft.",
+      "next_step": "Write two rejection rules before starting important work.",
+      "evidence": []
+    },
+    {
+      "id": "diligence",
+      "label": "Diligence",
+      "definition": "Check sources, protect information, test results, and finish the work carefully.",
+      "score": 3,
+      "confidence": "medium",
+      "strength": "Checks important sources and results.",
+      "practice": "A final handoff record is not always saved.",
+      "next_step": "End with the result, proof, owner, and next step.",
+      "evidence": []
+    },
+    {
+      "id": "adaptive-flexibility",
+      "label": "Adaptive Flexibility",
+      "definition": "Use feedback, change the approach, verify the change, and carry the lesson forward.",
+      "score": 4,
+      "confidence": "medium",
+      "strength": "Changes the workflow after finding a problem.",
+      "practice": "The new rule is not always reused in a later task.",
+      "next_step": "Record the changed rule and cite its next use.",
+      "evidence": []
+    }
+  ],
+  "adaptive_flexibility": {
+    "baseline": {
+      "period": "Prior 14 days",
+      "score": 3,
+      "confidence": "medium",
+      "summary": "Fixed problems within the immediate task.",
+      "evidence": null
+    },
+    "recent": {
+      "period": "Recent 7 days",
+      "score": 4,
+      "confidence": "medium",
+      "summary": "Changed the workflow and carried the lesson forward.",
+      "evidence": null
+    }
+  }
+}

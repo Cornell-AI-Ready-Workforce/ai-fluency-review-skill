@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "AI Fluency Review",
+    "summary": "",
+    "generated_on": "",
+    "coverage_note": ""
+  },
+  "reliability": {
+    "confidence": "low",
+    "coverage_summary": "",
+    "limitations": []
+  },
+  "interaction_events": [],
+  "areas": [
+    {
+      "id": "description",
+      "label": "Description",
+      "definition": "Give AI a clear goal, useful context, limits, and audience.",
+      "score": null,
+      "confidence": "low",
+      "strength": "",
+      "practice": "",
+      "next_step": "",
+      "evidence": []
+    },
+    {
+      "id": "delegation",
+      "label": "Delegation",
+      "definition": "Choose what AI should do, what the person should keep, and who checks the result.",
+      "score": null,
+      "confidence": "low",
+      "strength": "",
+      "practice": "",
+      "next_step": "",
+      "evidence": []
+    },
+    {
+      "id": "discernment",
+      "label": "Discernment",
+      "definition": "Question AI output and identify weak, missing, or unsupported claims.",
+      "score": null,
+      "confidence": "low",
+      "strength": "",
+      "practice": "",
+      "next_step": "",
+      "evidence": []
+    },
+    {
+      "id": "diligence",
+      "label": "Diligence",
+      "definition": "Check sources, protect information, test results, and finish the work carefully.",
+      "score": null,
+      "confidence": "low",
+      "strength": "",
+      "practice": "",
+      "next_step": "",
+      "evidence": []
+    },
+    {
+      "id": "adaptive-flexibility",
+      "label": "Adaptive Flexibility",
+      "definition": "Use feedback, change the approach, verify the change, and carry the lesson forward.",
+      "score": null,
+      "confidence": "low",
+      "strength": "",
+      "practice": "",
+      "next_step": "",
+      "evidence": []
+    }
+  ],
+  "adaptive_flexibility": {
+    "baseline": {
+      "period": "Prior period",
+      "score": null,
+      "confidence": "low",
+      "summary": "",
+      "evidence": null
+    },
+    "recent": {
+      "period": "Recent period",
+      "score": null,
+      "confidence": "low",
+      "summary": "",
+      "evidence": null
+    }
+  }
+}
