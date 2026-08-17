@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render a self-contained AI fluency review from validated JSON input."""
+"""Render a self-contained AI fluency review from assessment JSON."""
 
 from __future__ import annotations
 

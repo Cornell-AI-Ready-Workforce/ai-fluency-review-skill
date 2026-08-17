@@ -56,7 +56,7 @@ An evidence object contains:
 
 ## `interaction_events`
 
-Keep the detailed audit trail here. The renderer validates these records and uses only aggregate counts in the HTML; event summaries, source references, and diff references are not embedded in the page.
+Keep the detailed audit trail here. The renderer uses only aggregate counts in the HTML; event summaries, source references, and diff references are not embedded in the page.
 
 ```json
 {

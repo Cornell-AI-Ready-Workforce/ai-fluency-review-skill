@@ -22,8 +22,7 @@ Use the source-access and browser tools available in the host environment. Do no
    python3 scripts/render_report.py --input assessment.json --output ai_fluency_review.html
    ```
 
-7. Open the HTML in a browser and verify desktop and 390 px mobile layouts, light and dark themes, horizontal overflow, console errors, chart labels, and the reliability summary.
-8. Deliver the HTML and, when useful, the assessment JSON as a restricted audit artifact. Do not present the result as a clinical, personality, hiring, or validated psychometric score.
+7. Deliver the HTML and, when useful, the assessment JSON as a restricted audit artifact. Do not present the result as a clinical, personality, hiring, or validated psychometric score.
 
 ## Output requirements
 
@@ -56,7 +55,7 @@ Use the source-access and browser tools available in the host environment. Do no
 
 ## Bundled resources
 
-- `scripts/render_report.py`: validate the assessment and generate the standalone report.
+- `scripts/render_report.py`: generate the standalone report from the assessment.
 - `references/rubric.md`: scoring anchors and evidence safeguards.
 - `references/input-schema.md`: field requirements and neutral examples.
 - `assets/assessment-template.json`: vendor-neutral input skeleton.
