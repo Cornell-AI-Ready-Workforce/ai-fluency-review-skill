@@ -28,9 +28,11 @@ Use the source-access and browser tools available in the host environment. Do no
 
 - Use plain language suitable for people without technical backgrounds.
 - Begin with “Five Areas”: five concise definitions followed by a bar chart with the areas on the x-axis and the five evaluation labels on the y-axis.
+- When periods are compared, use the recent period for the Five Areas chart and label that scope. Otherwise, use all available evidence and say so.
 - Follow with “Adaptive Flexibility”: time on the x-axis, the same five labels on the y-axis, and a table with period, evaluation, behavioral meaning, and confidence.
 - Then show one strength, one practice point, one next action, and confidence for each area.
 - End with a compact reliability section showing overall confidence, coverage limits, and aggregate human, agent, mixed, unknown, and attributable-edit counts.
+- Count each recorded action once. Do not count missing, skipped, or inferred behavior as an interaction event.
 - Keep raw evidence, source links, click trails, and event records out of the HTML.
 - Preserve `null` scores as “Not enough evidence.” Never silently invent or average missing data.
 - Keep the report self-contained: no CDN, remote font, framework, or vendor dependency.
