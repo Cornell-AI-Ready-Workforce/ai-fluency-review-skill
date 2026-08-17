@@ -1,4 +1,4 @@
 interface:
   display_name: "AI Fluency Review Skill"
-  short_description: "Build provenance-aware AI fluency reports"
-  default_prompt: "Use $ai-fluency-review to assess observed AI-use behavior, separate human and agent actions, and create a concise standalone HTML report."
+  short_description: "Create evidence-linked AI fluency reviews"
+  default_prompt: "Use $ai-fluency-review to assess observed AI-use behavior and create a concise standalone HTML report."

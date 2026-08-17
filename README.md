@@ -22,11 +22,13 @@ cp -R skills/ai-fluency-review ~/.codex/skills/ai-fluency-review
 
 ## Use
 
-Ask the agent to use `$ai-fluency-review` with the records you authorize:
+Ask the agent to use the skill with the records you authorize:
 
 ```text
-Use $ai-fluency-review to review my authorized AI-use records and create the HTML report.
+Use the AI Fluency Review Skill to review these authorized AI-use records and create the HTML report.
 ```
+
+You may also invoke it with the skill syntax supported by your agent or harness.
 
 The optional assessment-record format is in [input-schema.md](skills/ai-fluency-review/references/input-schema.md). Scoring guidance is in [rubric.md](skills/ai-fluency-review/references/rubric.md).
 
