@@ -10,7 +10,7 @@ It assesses five observable areas:
 - Diligence
 - Adaptive Flexibility
 
-The skill produces a self-contained light/dark HTML report with a five-area evaluation, an Adaptive Flexibility time comparison, practical next steps, and a concise reliability summary.
+The skill tells the agent how to create a self-contained light/dark HTML report with a five-area evaluation, an Adaptive Flexibility time comparison, practical next steps, and a concise reliability summary.
 
 ## Install
 
@@ -28,7 +28,7 @@ Ask the agent to use `$ai-fluency-review` with the records you authorize:
 Use $ai-fluency-review to review my authorized AI-use records and create the HTML report.
 ```
 
-The assessment format is in [input-schema.md](skills/ai-fluency-review/references/input-schema.md). Scoring guidance is in [rubric.md](skills/ai-fluency-review/references/rubric.md).
+The optional assessment-record format is in [input-schema.md](skills/ai-fluency-review/references/input-schema.md). Scoring guidance is in [rubric.md](skills/ai-fluency-review/references/rubric.md).
 
 ## Principles
 

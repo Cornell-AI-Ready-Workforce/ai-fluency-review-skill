@@ -1,6 +1,6 @@
-# Assessment input
+# Assessment record
 
-`render_report.py` accepts one UTF-8 JSON object.
+Use this optional JSON record when a separate, auditable assessment file is useful. The HTML report can be created directly without this file.
 
 ## Required shape
 
@@ -52,11 +52,11 @@ An evidence object contains:
 }
 ```
 
-`source` is optional. The renderer creates a link only for `http:`, `https:`, `file:`, or relative paths. Other values appear as plain source labels.
+`source` is optional. Use a URL, relative path, file URL, or stable record identifier.
 
 ## `interaction_events`
 
-Keep the detailed audit trail here. The renderer uses only aggregate counts in the HTML; event summaries, source references, and diff references are not embedded in the page.
+Keep the detailed audit trail here. Put only aggregate counts in the HTML; do not embed event summaries, source references, or diff references in the page.
 
 ```json
 {
@@ -85,7 +85,7 @@ For edits, use `diff_ref` when available. Set `actor` to `mixed` when both human
 | `coverage_summary` | string | Concise account of periods, contexts, and attribution coverage. |
 | `limitations` | array of strings | Material gaps only; do not hide unequal windows or unknown authorship. |
 
-The renderer derives event counts from `interaction_events`; do not enter manual counts.
+Derive event counts from `interaction_events`; do not enter manual counts.
 
 ## `adaptive_flexibility`
 
@@ -114,5 +114,5 @@ If either score is null, the report shows the available point and states that ch
 - Use simple technical English.
 - Describe what happened, not what kind of person someone is.
 - Avoid product-specific language unless it is necessary evidence supplied by the user.
-- Keep ratings and examples grounded in the input. The renderer never calculates scores.
+- Keep ratings and examples grounded in the evidence. Do not calculate scores from output quality alone.
 - Escape or remove secrets before creating the JSON.

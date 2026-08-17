@@ -7,7 +7,7 @@ description: Create a provenance-aware AI fluency review from observed AI-use re
 
 Build a behavior-level review from supplied or authorized evidence. Keep it useful, portable, vendor-neutral, and explicit about uncertainty.
 
-Use the source-access and browser tools available in the host environment. Do not require a particular assistant, connector, activity-history product, or agent harness. The bundled renderer uses only the Python 3 standard library.
+Use the source-access and browser tools available in the host environment. Do not require a particular assistant, connector, activity-history product, programming language, or agent harness.
 
 ## Workflow
 
@@ -15,14 +15,9 @@ Use the source-access and browser tools available in the host environment. Do no
 2. Select comparison windows. Default to recent 7 days versus the prior 14 days only when both periods have enough evidence; otherwise use the available windows or report that a trend is not supportable.
 3. Read [references/rubric.md](references/rubric.md) completely. Apply its five constructs, five labels, evidence rules, and safeguards.
 4. Extract observed behaviors and interaction events. For every event, record the actor as `human`, `agent`, `mixed`, or `unknown` and record how that attribution was established. Separate direct observations from interpretation.
-5. Keep an auditable evidence trail in the assessment JSON, but keep the visible report concise. Create the JSON from [assets/assessment-template.json](assets/assessment-template.json) and read [references/input-schema.md](references/input-schema.md).
-6. Run:
-
-   ```bash
-   python3 scripts/render_report.py --input assessment.json --output ai_fluency_review.html
-   ```
-
-7. Deliver the HTML and, when useful, the assessment JSON as a restricted audit artifact. Do not present the result as a clinical, personality, hiring, or validated psychometric score.
+5. Keep an auditable evidence trail in an assessment record, but keep the visible report concise. When a separate record is useful, start from [assets/assessment-template.json](assets/assessment-template.json) and read [references/input-schema.md](references/input-schema.md).
+6. Generate a standalone `ai_fluency_review.html` directly with the tools available in the host environment. Follow the output requirements below; do not rely on an external renderer, framework, CDN, or build step.
+7. Deliver the HTML and, when useful, the assessment record as a restricted audit artifact. Do not present the result as a clinical, personality, hiring, or validated psychometric score.
 
 ## Output requirements
 
@@ -36,6 +31,10 @@ Use the source-access and browser tools available in the host environment. Do no
 - Preserve `null` scores as “Not enough evidence.” Never silently invent or average missing data.
 - Keep the report self-contained: no CDN, remote font, framework, or vendor dependency.
 - Embed only the presentation fields in the HTML. Keep raw evidence and interaction events out of the generated page source.
+- Support light and dark themes with a visible theme control and the user's system preference as the initial setting.
+- Make the page responsive and readable on desktop and phone without horizontal scrolling.
+- Use semantic HTML, accessible labels, sufficient color contrast, and text equivalents for every chart.
+- Keep interactions optional and simple. The report must remain understandable if JavaScript is unavailable.
 
 ## Evidence boundaries
 
@@ -55,7 +54,6 @@ Use the source-access and browser tools available in the host environment. Do no
 
 ## Bundled resources
 
-- `scripts/render_report.py`: generate the standalone report from the assessment.
 - `references/rubric.md`: scoring anchors and evidence safeguards.
-- `references/input-schema.md`: field requirements and neutral examples.
+- `references/input-schema.md`: optional assessment-record fields and neutral examples.
 - `assets/assessment-template.json`: vendor-neutral input skeleton.
