@@ -28,6 +28,7 @@ Use the source-access and browser tools available in the host environment. Do no
 
 - Use plain language suitable for people without technical backgrounds.
 - Prefer headings, labels, charts, and tables over explanatory prose. Do not add a hero subtitle, section introduction, generic disclaimer, methodology paragraph, or caption that repeats visible information.
+- Keep visible scope metadata limited to the evidence periods and coverage. Do not show rubric or scoring-method labels such as “whole-label rubric.”
 - Begin with “Five Areas”: five concise definitions followed by a bar chart with the areas on the x-axis and the five evaluation labels on the y-axis.
 - When periods are compared, use the recent period for the Five Areas chart and label that scope. Otherwise, use all available evidence and say so.
 - Follow with “Adaptive Flexibility”: time on the x-axis, the same five labels on the y-axis, and a table with period, evaluation, behavioral meaning, and confidence.
