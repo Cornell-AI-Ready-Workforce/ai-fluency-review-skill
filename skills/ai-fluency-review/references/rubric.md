@@ -83,7 +83,8 @@ Use `null` when evidence is too sparse, contradictory, or uneven to support a la
 11. Agent-only actions never increase the person's score. Events with an unknown actor cannot support Strong or Very strong.
 12. Credit an edit only when provenance identifies the human contribution. For a mixed edit, credit only the attributable human action, such as setting a constraint, revising text, accepting a change, or rejecting output.
 13. Prefer event sequences to isolated events. A sequence such as open, inspect, revise, decide, and reuse supports a stronger inference than any one click.
-14. Level 5 requires repeated evidence across at least three distinct contexts, high-confidence human provenance, and no unresolved material counterevidence.
+14. Level 4 requires supporting behavior in at least two distinct contexts; with only one context, cap the rating at Level 3. Level 5 requires at least three contexts, high-confidence human provenance, and no unresolved material counterevidence.
+15. Report provenance counts only from explicit event-level records. Narrative summaries can support behavior ratings, but not precise actor or interaction totals.
 
 ## Interaction provenance
 
