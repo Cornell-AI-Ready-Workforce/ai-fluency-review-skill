@@ -7,7 +7,7 @@ description: Create a concise, evidence-linked AI fluency review and standalone 
 
 Build a behavior-level review from supplied or authorized evidence. Keep it useful, portable, vendor-neutral, and clear about uncertainty.
 
-Use the source-access and browser tools available in the host environment. Do not require a particular assistant, connector, activity-history product, programming language, or agent harness.
+Use the host environment’s native access to history, files, artifacts, and activity. Do not require an adapter, connector, plugin, conversion layer, shared event schema, particular assistant, programming language, or agent harness. If a source is unavailable, continue with accessible evidence and report the coverage limit.
 
 ## Inputs and output
 
@@ -54,6 +54,7 @@ Use the source-access and browser tools available in the host environment. Do no
 
 - Assess observed behavior, not personality or output quality alone.
 - Do not assume a particular model, assistant, harness, agent hierarchy, event schema, or history format.
+- Do not ask for an adapter or data conversion when the host can already read its native records.
 - Treat opens and clicks as interaction, not proof of reading, understanding, judgment, or authorship.
 - Do not let AI-only or unattributed actions raise the person's rating. Credit edits only when the human contribution can be identified.
 - State material differences in coverage and do not turn unequal periods into a rate claim.
