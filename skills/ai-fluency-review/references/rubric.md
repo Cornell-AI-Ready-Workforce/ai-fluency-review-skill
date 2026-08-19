@@ -73,7 +73,7 @@ Use `null` when evidence is too sparse, contradictory, or uneven to support a la
 1. Use dated, observable behavior. Prefer direct requests, corrections, checks, decisions, and saved artifacts.
 2. Keep one or two strongest examples per area. More examples do not automatically increase a score.
 3. Identify evidence with a date, short task context, and observed action. Add a stable user-visible source link when possible; never show an opaque identifier without context.
-4. Record counterevidence. A rating should reflect repeated behavior, not only the best episode.
+4. Record observed counterevidence. Label missing behavior or unavailable sources as an evidence gap, not counterevidence. Absence of evidence can reduce confidence or leave a higher label unsupported, but it is not proof of poor behavior.
 5. Distinguish the person's choices from actions automatically performed by the AI or harness.
 6. Compare periods only when both have enough relevant evidence. State material coverage differences.
 7. Treat a caught mistake as positive evidence of discernment. Evaluate Adaptive Flexibility by what changed afterward.
@@ -85,6 +85,7 @@ Use `null` when evidence is too sparse, contradictory, or uneven to support a la
 13. Prefer event sequences to isolated events. A sequence such as open, inspect, revise, decide, and reuse supports a stronger inference than any one click.
 14. Level 4 requires supporting behavior in at least two distinct contexts; with only one context, cap the rating at Level 3. Level 5 requires at least three contexts, high-confidence human provenance, and no unresolved material counterevidence.
 15. Report provenance counts only from explicit event-level records. Narrative summaries can support behavior ratings, but not precise actor or interaction totals.
+16. Inventory the accessible sessions or tasks in each comparison window before selecting evidence. Prefer broad coverage across dates and contexts; if sampling is necessary, use and disclose a neutral rule rather than choosing only the strongest episodes.
 
 ## Interaction provenance
 
