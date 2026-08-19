@@ -39,7 +39,7 @@ Use the source-access and browser tools available in the host environment. Do no
 - Show one or two concise evidence examples per area in plain language. Include a stable, user-visible source link when available; otherwise use a date and short task label.
 - When the history supports it, distribute visible examples across at least three dates and several task contexts. Avoid reusing one episode across most areas; disclose when narrow coverage makes that unavoidable.
 - Use “Counterevidence” only for an observed behavior that contradicts the rating. Use “Evidence gap” when a behavior was not observed or a source was unavailable; explain it without implying the person failed.
-- End with a compact “Evidence Base” section: overall confidence plus at most four concise items covering sources, period coverage, attribution, and material limits. Omit internal process notes and excluded-source lists.
+- End with a compact “Evidence Base” section: overall confidence plus at most four concise items covering sources, period coverage, attribution, and material limits. When sampling was necessary, name the neutral sampling rule and give inventoried and reviewed counts. Omit internal process notes and excluded-source lists.
 - Show interaction or authorship counts only when explicit event-level provenance exists. Omit unavailable metrics instead of filling the report with “Not captured.”
 - Keep raw transcripts, detailed click trails, and full event records out of the HTML.
 - Put necessary uncertainty and coverage limits only in the Evidence Base section. Keep chart text equivalents available to assistive technology without repeating them as visible paragraphs.
