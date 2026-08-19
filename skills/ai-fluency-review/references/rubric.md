@@ -72,7 +72,7 @@ Use `null` when evidence is too sparse, contradictory, or uneven to support a la
 
 1. Use dated, observable behavior. Prefer direct requests, corrections, checks, decisions, and saved artifacts.
 2. Keep one or two strongest examples per area. More examples do not automatically increase a score.
-3. Cite the source record or stable identifier when possible.
+3. Identify evidence with a date, short task context, and observed action. Add a stable user-visible source link when possible; never show an opaque identifier without context.
 4. Record counterevidence. A rating should reflect repeated behavior, not only the best episode.
 5. Distinguish the person's choices from actions automatically performed by the AI or harness.
 6. Compare periods only when both have enough relevant evidence. State material coverage differences.
