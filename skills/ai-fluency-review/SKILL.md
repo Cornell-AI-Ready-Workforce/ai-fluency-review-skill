@@ -27,13 +27,14 @@ Use the source-access and browser tools available in the host environment. Do no
 ## Report requirements
 
 - Use plain language suitable for people without technical backgrounds.
+- Speak directly to the person using “you” and “your.” If a preferred name is confirmed, title the report “[Name], here’s your AI Fluency Review”; otherwise use “Here’s your AI Fluency Review.” Never infer a name from an account, path, or email.
 - Prefer headings, labels, charts, and tables over explanatory prose. Do not add a hero subtitle, section introduction, generic disclaimer, methodology paragraph, or caption that repeats visible information.
 - Keep visible scope metadata limited to the evidence periods and coverage. Do not show rubric or scoring-method labels such as “whole-label rubric.”
 - Begin with “Five Areas”: five concise definitions followed by a bar chart with the areas on the x-axis and the five evaluation labels on the y-axis.
-- Directly below the chart, add “General Overview” with at most two “Doing well” bullets and two “Needs work” bullets. Generate one source line from the actual source types, evidence units, counts, and periods; never hard-code an assistant, model, harness, or product name. For example: “Based on 4 recent and 3 prior direct task contexts.” Do not call observations or task contexts “sessions” unless distinct sessions were counted.
+- Directly below the chart, add “General Overview” with at most two “What you did well” bullets and two “What to improve” bullets. Generate one source line from the actual source types, evidence units, counts, and periods; never hard-code an assistant, model, harness, or product name. For example: “Based on 4 recent and 3 prior direct task contexts.” Do not call observations or task contexts “sessions” unless distinct sessions were counted.
 - When periods are compared, use the recent period for the Five Areas chart and label that scope. Otherwise, use all available evidence and say so.
 - Follow with “Adaptive Flexibility”: time on the x-axis, the same five labels on the y-axis, and a table with period, evaluation, behavioral meaning, and confidence.
-- Then show one strength, one practice point, one next action, and confidence for each area.
+- Then show “What you did well,” “What to improve,” “Try next,” and confidence for each area.
 - Show one or two concise evidence examples per area in plain language. Include a stable, user-visible source link when available; otherwise use a date and short task label.
 - End with a compact “Evidence Base” section: overall confidence plus at most four concise items covering sources, period coverage, attribution, and material limits. Omit internal process notes and excluded-source lists.
 - Show interaction or authorship counts only when explicit event-level provenance exists. Omit unavailable metrics instead of filling the report with “Not captured.”
