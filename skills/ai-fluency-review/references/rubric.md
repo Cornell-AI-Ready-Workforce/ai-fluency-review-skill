@@ -85,7 +85,7 @@ Use `null` when evidence is too sparse, contradictory, or uneven to support a la
 13. Prefer event sequences to isolated events. A sequence such as open, inspect, revise, decide, and reuse supports a stronger inference than any one click.
 14. Level 4 requires supporting behavior in at least two distinct contexts; with only one context, cap the rating at Level 3. Level 5 requires at least three contexts, high-confidence human provenance, and no unresolved material counterevidence.
 15. Report provenance counts only from explicit event-level records. Narrative summaries can support behavior ratings, but not precise actor or interaction totals.
-16. Inventory the accessible sessions or tasks in each comparison window before selecting evidence. Prefer broad coverage across dates and contexts; if sampling is necessary, use and disclose a neutral rule rather than choosing only the strongest episodes.
+16. Broad inventory is the default: inventory every accessible direct session or task in each comparison window before rating. Deep-read all when feasible; otherwise use a reproducible neutral sample across active dates and varied contexts, disclose the rule and counts, and never choose only the strongest episodes. If full inventory is impossible, state the access limit and do not call the sample representative.
 
 ## Interaction provenance
 
