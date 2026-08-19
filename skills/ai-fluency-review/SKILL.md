@@ -34,7 +34,7 @@ Use the source-access and browser tools available in the host environment. Do no
 - Follow with “Adaptive Flexibility”: time on the x-axis, the same five labels on the y-axis, and a table with period, evaluation, behavioral meaning, and confidence.
 - Then show one strength, one practice point, one next action, and confidence for each area.
 - Show one or two concise evidence examples per area in plain language. Include a stable, user-visible source link when available; otherwise use a date and short task label.
-- End with a compact “Evidence Base” section showing overall confidence, sources used, period coverage, and the limits that affect interpretation.
+- End with a compact “Evidence Base” section: overall confidence plus at most four concise items covering sources, period coverage, attribution, and material limits. Omit internal process notes and excluded-source lists.
 - Show interaction or authorship counts only when explicit event-level provenance exists. Omit unavailable metrics instead of filling the report with “Not captured.”
 - Keep raw transcripts, detailed click trails, and full event records out of the HTML.
 - Put necessary uncertainty and coverage limits only in the Evidence Base section. Keep chart text equivalents available to assistive technology without repeating them as visible paragraphs.
