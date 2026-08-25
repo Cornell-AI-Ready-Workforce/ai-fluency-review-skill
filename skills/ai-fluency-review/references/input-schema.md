@@ -1,118 +1,61 @@
-# Assessment record
+# Assessment record v0.2
 
-Use this optional JSON record when a separate, auditable assessment file is useful. The HTML report can be created directly without this file.
+Use this optional private JSON record when a reproducible report or audit trail is useful. The agent may create the HTML directly without it.
 
-## Required shape
+Validate records against [../assets/assessment-record.schema.json](../assets/assessment-record.schema.json). Start from [../assets/assessment-template.json](../assets/assessment-template.json).
 
-```json
-{
-  "meta": {
-    "title": "AI Fluency Review",
-    "summary": "Optional one-sentence finding.",
-    "generated_on": "YYYY-MM-DD",
-    "coverage_note": "Short note about sources and limits."
-  },
-  "reliability": {
-    "confidence": "low | medium | high",
-    "coverage_summary": "What evidence was available and attributable.",
-    "limitations": []
-  },
-  "interaction_events": [],
-  "areas": [],
-  "adaptive_flexibility": {
-    "baseline": {},
-    "recent": {}
-  }
-}
-```
+## Top-level fields
 
-## `areas`
+- `schema_version`, `rubric_version`, `renderer_version`: explicit contract versions.
+- `meta`: title, generated date, review period, and participant-facing coverage line.
+- `evidence_inventory`: evidence unit, source types, periods, counts, sampling method, access limits, and attribution limits.
+- `reliability`: overall `evidence_strength` plus material limitations.
+- `standouts`: strongest observed habit, current focus, and one action to try next.
+- `areas`: exactly one record for each of the five required ids.
+- `adaptive_flexibility_change`: longitudinal conclusion without duplicating the current Adaptive Flexibility rating.
+- `interaction_events`: optional private provenance records. These are never copied into the HTML.
 
-Provide exactly one object for each required id: `description`, `delegation`, `discernment`, `diligence`, and `adaptive-flexibility`.
+## Area records
 
-| Field | Type | Rule |
-|---|---|---|
-| `id` | string | One required id. |
-| `label` | string | Human-readable area name. |
-| `definition` | string | One plain-language sentence. |
-| `score` | integer or null | Whole number 1–5, or null when evidence is insufficient. |
-| `confidence` | string | `low`, `medium`, or `high`; this is confidence in the evidence, not the skill level. |
-| `strength` | string | One observed positive behavior. |
-| `practice` | string | One specific improvement. |
-| `next_step` | string | One practical next action. |
-| `evidence` | array | Zero to two evidence objects. |
+Required ids are `description`, `delegation`, `discernment`, `diligence`, and `adaptive-flexibility`.
 
-An evidence object contains:
+Each area contains:
+
+- `display_label`: the action label shown prominently to participants.
+- `research_label`: the 4D or longitudinal construct name.
+- `level`: integer 1–5 or `null`.
+- `evidence_strength`: `low`, `medium`, or `high`.
+- `observed_pattern`, `inconsistent_patterns`, and `evidence_gaps`.
+- `opportunities_to_observe`, `contexts_observed`, and `rating_rationale` for auditability.
+- `recommended_action`: one small action to try on a new task.
+- `evidence`: zero to two concise examples.
+
+An evidence example separates participant-facing and private source information:
 
 ```json
 {
-  "date": "YYYY-MM-DD or a short period label",
-  "summary": "One concise observed behavior.",
-  "source": "Optional URL, relative path, file URL, or stable record id"
+  "date": "2026-08-18",
+  "task_label": "Policy summary",
+  "summary": "You checked a conflicting number against the source before using it.",
+  "source_label": "Policy source check",
+  "source_url": null,
+  "private_source_id": "episode-004"
 }
 ```
 
-`source` is optional. Use a URL, relative path, file URL, or stable record identifier.
+The renderer omits `private_source_id`. It includes `source_url` only when present and safe to expose.
 
-## `interaction_events`
+## Change over time
 
-Keep the detailed audit trail here. Put only aggregate counts in the HTML; do not embed event summaries, source references, or diff references in the page.
+`adaptive_flexibility_change.status` is either `supported` or `not-enough-evidence`. A supported conclusion records the friction, changed approach, verified result, and later reuse. The current rating remains canonical in `areas`; the change object must not repeat it.
 
-```json
-{
-  "id": "event-001",
-  "timestamp": "YYYY-MM-DDThh:mm:ssZ or supplied time label",
-  "action": "artifact_open",
-  "artifact_id": "stable artifact id",
-  "actor": "human",
-  "actor_basis": "event_origin",
-  "provenance_confidence": "high",
-  "summary": "Opened the generated report.",
-  "source": "optional private source reference",
-  "diff_ref": "optional tracked-change or diff reference"
-}
-```
+## Interaction provenance
 
-Allowed actions are `artifact_open`, `source_open`, `action_click`, `edit`, `comment`, `approve`, `reject`, `rerun`, `download`, `share`, and `other`. Allowed actors are `human`, `agent`, `mixed`, and `unknown`. Allowed attribution bases are `explicit_authorship`, `tracked_change`, `event_origin`, `session_attribution`, `inferred`, and `unknown`.
+Optional `interaction_events` use the actions `request`, `delegate`, `inspect`, `verify`, `revise`, `decide`, `reuse_practice`, or `other`. Record actor, attribution basis, and provenance strength separately. An open or click may be recorded as `inspect` only when the evidence shows inspection; otherwise omit it or use `other` without inferring judgment.
 
-For edits, use `diff_ref` when available. Set `actor` to `mixed` when both human and agent contributed and the contributions cannot be cleanly separated. Do not relabel an unknown event as human simply because it happened in the person's session.
+## Privacy
 
-## `reliability`
-
-| Field | Type | Rule |
-|---|---|---|
-| `confidence` | string | `low`, `medium`, or `high`, using the rubric reliability anchors. |
-| `coverage_summary` | string | Concise account of periods, contexts, and attribution coverage. |
-| `limitations` | array of strings | Material gaps only; do not hide unequal windows or unknown authorship. |
-
-Derive event counts from `interaction_events`; do not enter manual counts.
-
-## `adaptive_flexibility`
-
-Both `baseline` and `recent` contain:
-
-| Field | Type | Rule |
-|---|---|---|
-| `period` | string | Display label such as `Prior 14 days`. |
-| `score` | integer or null | Whole number 1–5 or null. |
-| `confidence` | string | `low`, `medium`, or `high`. |
-| `summary` | string | What behavior in this period showed. |
-| `evidence` | object or null | One concise evidence object. |
-
-If either score is null, the report shows the available point and states that change cannot be evaluated reliably.
-
-## Scoring and privacy rules
-
-- Opens and clicks alone do not support a positive score; they only show interaction.
-- Agent-only events cannot raise the person's score. Unknown-actor events cannot support a score of 4 or 5.
-- A human-attributed revision, rejection, approval, verification, or reusable rule may support a score when its meaning is clear from the surrounding evidence.
-- Keep evidence and event records in the assessment JSON only. Restrict access because the JSON may contain private activity records.
-- For candidates or employees, obtain appropriate consent and define access and retention. Never use this report for automated ranking or a hiring decision.
-
-## Writing rules
-
-- Use simple technical English.
-- Describe what happened, not what kind of person someone is.
-- Avoid product-specific language unless it is necessary evidence supplied by the user.
-- Keep ratings and examples grounded in the evidence. Do not calculate scores from output quality alone.
-- Escape or remove secrets before creating the JSON.
+- Keep assessment JSON private; it may contain detailed activity references.
+- Keep secrets, raw transcripts, and unnecessary personal data out of the record.
+- Do not infer human authorship from session ownership.
+- Do not use the record for automated ranking or employment decisions.

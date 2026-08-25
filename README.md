@@ -1,20 +1,20 @@
 # AI Fluency Review Skill
 
-A vendor-neutral agent skill for creating concise, evidence-linked AI fluency reviews from authorized interaction records.
+A vendor-neutral agent skill for creating a private, evidence-linked coaching review from AI-use records a person explicitly authorizes.
 
-It assesses five observable areas:
+The review covers five observable areas:
 
-- Description
-- Delegation
-- Discernment
-- Diligence
-- Adaptive Flexibility
+- Description — Brief the task
+- Delegation — Divide the work
+- Discernment — Check the result
+- Diligence — Finish responsibly
+- Adaptive Flexibility — Learn and adapt
 
-The skill tells the agent how to create a self-contained light/dark HTML report with a five-area evaluation, an Adaptive Flexibility time comparison, practical next steps, and a concise reliability summary.
+It produces a self-contained light/dark HTML report with no composite score or ranking. Four-D details describe current behavior; Adaptive Flexibility is treated separately as change over time.
 
 ## Install
 
-Copy `skills/ai-fluency-review` into the skill directory used by your agent harness. For Codex:
+Copy the skill into the skill directory used by your agent host. For Codex:
 
 ```bash
 cp -R skills/ai-fluency-review ~/.codex/skills/ai-fluency-review
@@ -22,23 +22,27 @@ cp -R skills/ai-fluency-review ~/.codex/skills/ai-fluency-review
 
 ## Use
 
-Ask the agent to use the skill with the records you authorize:
+The skill is explicit-only. Invoke it and name the records it may use:
 
 ```text
-Use the AI Fluency Review Skill to review these authorized AI-use records and create the HTML report.
+Use $ai-fluency-review with the AI-assisted work records in this folder from the last 14 days. Keep the report private.
 ```
 
-You may also invoke it with the skill syntax supported by your agent or harness.
+The agent can write the HTML directly. For a reproducible render, create the optional assessment JSON and run:
 
-The optional assessment-record format is in [input-schema.md](skills/ai-fluency-review/references/input-schema.md). Scoring guidance is in [rubric.md](skills/ai-fluency-review/references/rubric.md).
+```bash
+python skills/ai-fluency-review/scripts/render_report.py assessment.json ai_fluency_review.html
+```
 
-## Principles
+The renderer uses only the Python standard library. See [input-schema.md](skills/ai-fluency-review/references/input-schema.md) for the record contract and [rubric.md](skills/ai-fluency-review/references/rubric.md) for evidence rules.
 
-- Assess behavior, not personality.
+## Boundaries
+
+- Assess observed behavior, not personality or employability.
 - Separate human, agent, mixed, and unknown actions.
-- Treat clicks and opens as interaction, not proof of understanding.
+- Treat clicks and opens as interaction, not proof of judgment.
 - Keep detailed evidence out of the HTML report.
-- Do not use the review for automated ranking or employment decisions.
+- Do not use the review for ranking or employment decisions.
 
 ## License
 
