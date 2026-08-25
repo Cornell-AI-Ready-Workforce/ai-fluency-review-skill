@@ -1,0 +1,180 @@
+{
+  "schema_version": "0.2.0",
+  "rubric_version": "0.2.0",
+  "renderer_version": "0.2.0",
+  "meta": {
+    "title": "Here’s your AI Fluency Review",
+    "generated_on": "2026-08-25",
+    "review_period": "August 12–25, 2026",
+    "coverage_line": "Based on 6 authorized work episodes across AI chats and resulting documents."
+  },
+  "evidence_inventory": {
+    "unit": "work episode",
+    "source_types": ["AI conversations", "resulting documents"],
+    "periods": ["2026-08-12 to 2026-08-25"],
+    "inventoried_count": 6,
+    "reviewed_count": 6,
+    "sampling_method": "All accessible eligible episodes",
+    "access_limits": ["Offline source checking was not visible unless recorded in the conversation or document."],
+    "attribution_limits": ["Two document edits combined human and AI text without tracked changes."]
+  },
+  "reliability": {
+    "evidence_strength": "medium",
+    "limitations": ["This first review does not support a comparison with an earlier period."]
+  },
+  "standouts": {
+    "strongest_observed_habit": "You usually gave the AI a clear audience, format, and useful source material before asking it to draft.",
+    "current_focus": "Make verification visible when a source contains a number or policy claim that affects the conclusion.",
+    "try_next": "Before accepting a draft, ask for a short claim-to-source table and check the two highest-risk claims yourself."
+  },
+  "areas": [
+    {
+      "id": "description",
+      "display_label": "Brief the task",
+      "research_label": "Description",
+      "level": 4,
+      "evidence_strength": "high",
+      "observed_pattern": "You regularly named the audience, desired format, source material, and completion criteria.",
+      "inconsistent_patterns": ["One scheduling request did not say which constraint mattered most when two preferences conflicted."],
+      "evidence_gaps": [],
+      "opportunities_to_observe": 6,
+      "contexts_observed": 4,
+      "rating_rationale": "The behavior was attributable to you and repeated across policy, communications, planning, and analysis tasks.",
+      "recommended_action": "Add one sentence naming the most important trade-off when a task has competing constraints.",
+      "evidence": [
+        {
+          "date": "2026-08-14",
+          "task_label": "Manager briefing",
+          "summary": "You specified the decision audience, a one-page limit, and which evidence had to be cited.",
+          "source_label": "Manager briefing",
+          "source_url": null,
+          "private_source_id": "episode-002"
+        },
+        {
+          "date": "2026-08-21",
+          "task_label": "Workshop plan",
+          "summary": "You supplied the participant profile, timing, materials, and a clear definition of a finished agenda.",
+          "source_label": "Workshop plan",
+          "source_url": null,
+          "private_source_id": "episode-005"
+        }
+      ]
+    },
+    {
+      "id": "delegation",
+      "display_label": "Divide the work",
+      "research_label": "Delegation",
+      "level": 3,
+      "evidence_strength": "medium",
+      "observed_pattern": "You kept final decisions for yourself and often asked AI to draft, organize, or surface options.",
+      "inconsistent_patterns": ["Review ownership was left implicit in two drafting tasks."],
+      "evidence_gaps": ["The records did not show how responsibilities were divided when another person joined the work."],
+      "opportunities_to_observe": 5,
+      "contexts_observed": 3,
+      "rating_rationale": "Human decision ownership was visible, but approval points were not consistently stated.",
+      "recommended_action": "At the start, state what AI may produce, what decision stays with you, and what must be checked before use.",
+      "evidence": [
+        {
+          "date": "2026-08-18",
+          "task_label": "Vendor options",
+          "summary": "You asked AI to organize trade-offs but explicitly retained the selection decision.",
+          "source_label": "Vendor options",
+          "source_url": null,
+          "private_source_id": "episode-003"
+        }
+      ]
+    },
+    {
+      "id": "discernment",
+      "display_label": "Check the result",
+      "research_label": "Discernment",
+      "level": 3,
+      "evidence_strength": "medium",
+      "observed_pattern": "You questioned unsupported recommendations and caught one contradiction between a draft and its source.",
+      "inconsistent_patterns": ["A conflicting policy number was cited in the final draft without a visible check."],
+      "evidence_gaps": ["You reported verifying the policy offline, but that check was not visible in the authorized trace."],
+      "opportunities_to_observe": 5,
+      "contexts_observed": 3,
+      "rating_rationale": "Several checks were visible, while a consequential numerical conflict remained reported rather than observable.",
+      "recommended_action": "For every consequential number, record the source line you checked and the decision you made about it.",
+      "evidence": [
+        {
+          "date": "2026-08-14",
+          "task_label": "Manager briefing",
+          "summary": "You noticed that the recommendation did not follow from the cited survey result and asked for a revision.",
+          "source_label": "Manager briefing check",
+          "source_url": null,
+          "private_source_id": "episode-002"
+        },
+        {
+          "date": "2026-08-23",
+          "task_label": "Policy summary",
+          "summary": "The trace contains your statement that you verified the policy, but not the verification itself.",
+          "source_label": "Policy summary",
+          "source_url": null,
+          "private_source_id": "episode-006"
+        }
+      ]
+    },
+    {
+      "id": "diligence",
+      "display_label": "Finish responsibly",
+      "research_label": "Diligence",
+      "level": 3,
+      "evidence_strength": "medium",
+      "observed_pattern": "You removed sensitive details, checked document structure, and saved a usable final artifact in most episodes.",
+      "inconsistent_patterns": ["One analysis ended after drafting without a recorded source check or final acceptance step."],
+      "evidence_gaps": ["The records did not show whether every final document was reviewed after export."],
+      "opportunities_to_observe": 6,
+      "contexts_observed": 4,
+      "rating_rationale": "Responsible completion was usually visible, but the final evidence trail varied by task.",
+      "recommended_action": "Close each task with a three-item note: checked, changed, and ready for use.",
+      "evidence": [
+        {
+          "date": "2026-08-21",
+          "task_label": "Workshop plan",
+          "summary": "You removed participant identifiers and checked that timings added up before saving the agenda.",
+          "source_label": "Workshop plan completion",
+          "source_url": null,
+          "private_source_id": "episode-005"
+        }
+      ]
+    },
+    {
+      "id": "adaptive-flexibility",
+      "display_label": "Learn and adapt",
+      "research_label": "Adaptive Flexibility",
+      "level": 3,
+      "evidence_strength": "low",
+      "observed_pattern": "You changed your prompting approach after a weak draft and checked that the revised task produced a clearer result.",
+      "inconsistent_patterns": [],
+      "evidence_gaps": ["The 14-day window did not show the revised practice reused in a later comparable task."],
+      "opportunities_to_observe": 2,
+      "contexts_observed": 1,
+      "rating_rationale": "A change and check were visible, but later reuse was not.",
+      "recommended_action": "Save the improved briefing pattern and deliberately reuse it on the next comparable task.",
+      "evidence": [
+        {
+          "date": "2026-08-18",
+          "task_label": "Vendor options",
+          "summary": "After a generic first draft, you added decision criteria and asked AI to map each option to them.",
+          "source_label": "Vendor options revision",
+          "source_url": null,
+          "private_source_id": "episode-003"
+        }
+      ]
+    }
+  ],
+  "adaptive_flexibility_change": {
+    "status": "not-enough-evidence",
+    "summary": "A changed approach and checked result were visible, but later reuse was not available in this first review.",
+    "baseline_period": null,
+    "baseline_level": null,
+    "friction": null,
+    "changed_approach": null,
+    "verified_result": null,
+    "later_reuse": null,
+    "evidence": []
+  },
+  "interaction_events": []
+}
