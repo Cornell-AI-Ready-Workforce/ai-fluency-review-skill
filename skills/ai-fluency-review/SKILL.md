@@ -2,7 +2,7 @@
 name: ai-fluency-review
 description: Create a warm, private AI Use Report from AI-use records the user explicitly authorizes. Use only when the user directly requests this report or names the skill. Never use it to rank people or make employment decisions.
 metadata:
-  version: "0.3.1"
+  version: "0.3.2"
 ---
 
 # AI Use Report
@@ -52,11 +52,13 @@ Copy [assets/report-template.html](assets/report-template.html) to `ai_use_repor
 
 HTML-escape every participant-derived value before substitution. All placeholders accept text only except `*_EVIDENCE_ITEMS` and `ABOUT_ITEMS`; those may contain controlled `<li>` elements whose contents are still escaped. Use “Not available” for unknown metadata instead of guessing.
 
+When the participant’s preferred name is explicitly available from the authorized conversation or profile, set `REPORT_TITLE` to “[Preferred name], your AI Use Report.” Otherwise use “This is your AI Use Report.” Never infer a name from a username, email address, filesystem path, or other ambiguous metadata.
+
 The finished report must remain self-contained, with no remote scripts, fonts, frameworks, analytics, raw transcripts, secret values, private identifiers, composite score, percentile, credential, ranking, or model confidence.
 
 Use this structure:
 
-1. **Your AI Use Report** — generated date, current period, comparison source or baseline period, record count, context count, and evidence strength. Do not add an eyebrow, tagline, or introductory description.
+1. **Personalized report title** — use the `REPORT_TITLE` rule above, followed by generated date, current period, comparison source or baseline period, record count, context count, and evidence strength. Do not add an eyebrow, tagline, or introductory description.
 2. **What stands out** — strongest habit, current focus, and the one concrete action to try next.
 3. **Five areas** — one compact row for each area.
 4. **Details** — five closed drawers. Each drawer shows what was observed, relevant limits or inconsistency, a real “You said” example from the authorized records when available, a concrete “Try next” version, and one or two dated evidence examples. Do not fabricate quotations.
