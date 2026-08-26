@@ -2,7 +2,7 @@
 name: ai-fluency-review
 description: Create a warm, private AI Use Report from AI-use records the user explicitly authorizes. Use only when the user directly requests this report or names the skill. Never use it to rank people or make employment decisions.
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
 ---
 
 # AI Use Report
@@ -32,7 +32,9 @@ Use a different period only when the user requests one. Never force a difference
 - **Diligence — Finish responsibly:** source checking, privacy, testing, and durable completion.
 - **Adaptive Flexibility — Adapt your AI use:** meaningful differences between the comparison and current evidence, including whether a changed approach was checked and reused.
 
-Use these behavior labels: Rarely observed, Emerging, Usually observed, Consistent, Reusable, or Not enough evidence. Evidence strength describes the evidence, never model confidence.
+For Description, Delegation, Discernment, and Diligence, use: Rarely observed, Emerging, Usually observed, Consistent, Reusable, or Not enough evidence. For Adaptive Flexibility, use a comparison label: More consistent, No clear change visible, Less consistent, or Not enough evidence. Evidence strength describes the evidence, never model confidence.
+
+For the template’s visual segments, map the four-D labels to levels 1–5 in the order listed above and map Not enough evidence to `none`. Map Adaptive Flexibility as More consistent = 4, No clear change visible = 3, Less consistent = 2, and Not enough evidence = `none`. These segments are visual summaries, not scores.
 
 ## Evidence rules
 
@@ -41,11 +43,16 @@ Use these behavior labels: Rarely observed, Emerging, Usually observed, Consiste
 - Use dated, participant-readable examples. Include material counterexamples and missing evidence.
 - Say “reported, not visible” when a self-report is not corroborated. Never translate missing observation into lack of skill.
 - Describe Adaptive Flexibility only from comparable earlier and current evidence. If comparison evidence is absent or materially incompatible, use Not enough evidence.
-- Choose one overall coaching focus and one action to try. Examples in the other areas explain the evidence; they are not additional assignments.
+- Choose one overall coaching focus and one action to try. Every drawer’s “Try next” example must demonstrate that same action in its area, not introduce another assignment.
+- Use a quotation only in the area it directly supports. If no area-relevant quotation exists, say: “No area-relevant quotation was available.”
 
 ## Report
 
-Create a single self-contained `ai_use_report.html` with no remote scripts, fonts, frameworks, analytics, raw transcripts, secret values, private identifiers, composite score, percentile, credential, ranking, or model confidence.
+Copy [assets/report-template.html](assets/report-template.html) to `ai_use_report.html` and replace every `{{PLACEHOLDER}}`. Keep its structure and styles unless the user requests a design change. Do not leave unresolved placeholders or sample content.
+
+HTML-escape every participant-derived value before substitution. All placeholders accept text only except `*_EVIDENCE_ITEMS` and `ABOUT_ITEMS`; those may contain controlled `<li>` elements whose contents are still escaped. Use “Not available” for unknown metadata instead of guessing.
+
+The finished report must remain self-contained, with no remote scripts, fonts, frameworks, analytics, raw transcripts, secret values, private identifiers, composite score, percentile, credential, ranking, or model confidence.
 
 Use this structure:
 

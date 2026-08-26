@@ -1,12 +1,12 @@
 # AI Use Report Skill
 
-A single-file, vendor-neutral skill for creating a warm, private AI Use Report from records a person explicitly authorizes.
+A minimal, vendor-neutral skill for creating a warm, private AI Use Report from records a person explicitly authorizes.
 
 The skill reviews Description, Delegation, Discernment, Diligence, and Adaptive Flexibility. It compares directly with a previous report when available; otherwise it compares adjacent rolling 15-day periods. Missing comparison evidence is reported as not enough evidence.
 
 ## Install
 
-Copy `skills/ai-fluency-review/SKILL.md` into an `ai-fluency-review` folder in your agent host’s skill directory.
+Copy `skills/ai-fluency-review` into your agent host’s skill directory. The package contains only `SKILL.md` and one static HTML design template; it has no renderer, schema, tests, or application code.
 
 ## Use
 
