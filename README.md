@@ -1,48 +1,20 @@
-# AI Fluency Review Skill
+# AI Use Report Skill
 
-A vendor-neutral agent skill for creating a private, evidence-linked coaching review from AI-use records a person explicitly authorizes.
+A single-file, vendor-neutral skill for creating a warm, private AI Use Report from records a person explicitly authorizes.
 
-The review covers five observable areas:
-
-- Description — Brief the task
-- Delegation — Divide the work
-- Discernment — Check the result
-- Diligence — Finish responsibly
-- Adaptive Flexibility — Learn and adapt
-
-It produces a self-contained light/dark HTML report with no composite score or ranking. Four-D details describe current behavior; Adaptive Flexibility is treated separately as change over time.
+The skill reviews Description, Delegation, Discernment, Diligence, and Adaptive Flexibility. It compares directly with a previous report when available; otherwise it compares adjacent rolling 15-day periods. Missing comparison evidence is reported as not enough evidence.
 
 ## Install
 
-Copy the skill into the skill directory used by your agent host. For Codex:
-
-```bash
-cp -R skills/ai-fluency-review ~/.codex/skills/ai-fluency-review
-```
+Copy `skills/ai-fluency-review/SKILL.md` into an `ai-fluency-review` folder in your agent host’s skill directory.
 
 ## Use
 
-The skill is explicit-only. Invoke it and name the records it may use:
-
 ```text
-Use $ai-fluency-review with the AI-assisted work records in this folder from the last 14 days. Keep the report private.
+Use $ai-fluency-review with the AI-assisted work records I authorize. Keep the report private.
 ```
 
-The agent can write the HTML directly. For a reproducible render, create the optional assessment JSON and run:
-
-```bash
-python skills/ai-fluency-review/scripts/render_report.py assessment.json ai_fluency_review.html
-```
-
-The renderer uses only the Python standard library. See [input-schema.md](skills/ai-fluency-review/references/input-schema.md) for the record contract and [rubric.md](skills/ai-fluency-review/references/rubric.md) for evidence rules.
-
-## Boundaries
-
-- Assess observed behavior, not personality or employability.
-- Separate human, agent, mixed, and unknown actions.
-- Treat clicks and opens as interaction, not proof of judgment.
-- Keep detailed evidence out of the HTML report.
-- Do not use the review for ranking or employment decisions.
+The skill creates one self-contained HTML report. It does not rank people or support employment decisions.
 
 ## License
 

@@ -1,7 +1,0 @@
-interface:
-  display_name: "AI Fluency Review"
-  short_description: "Create a private evidence-linked AI-use coaching review"
-  default_prompt: "Use $ai-fluency-review with only the records I authorize to create a private AI-use coaching report."
-
-policy:
-  allow_implicit_invocation: false
