@@ -2,7 +2,7 @@
 name: ai-fluency-review
 description: Create a warm, private AI Use Report from AI-use records the user explicitly authorizes. Use only when the user directly requests this report or names the skill. Never use it to rank people or make employment decisions.
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
 ---
 
 # AI Use Report
@@ -52,7 +52,7 @@ Copy [assets/report-template.html](assets/report-template.html) to `ai_use_repor
 
 HTML-escape every participant-derived value before substitution. All placeholders accept text only except `*_EVIDENCE_ITEMS` and `ABOUT_ITEMS`; those may contain controlled `<li>` elements whose contents are still escaped. Use “Not available” for unknown metadata instead of guessing.
 
-When the participant’s preferred name is explicitly available from the authorized conversation or profile, set `REPORT_TITLE` to “[Preferred name], your AI Use Report.” Otherwise use “This is your AI Use Report.” Never infer a name from a username, email address, filesystem path, or other ambiguous metadata.
+When the participant’s preferred name is explicitly available from the authorized conversation or profile, set `REPORT_TITLE` to “[Preferred name], this is your AI-fluency report.” Otherwise use “This is your AI-fluency report.” Never infer a name from a username, email address, filesystem path, or other ambiguous metadata.
 
 The finished report must remain self-contained, with no remote scripts, fonts, frameworks, analytics, raw transcripts, secret values, private identifiers, composite score, percentile, credential, ranking, or model confidence.
 
