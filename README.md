@@ -8,7 +8,7 @@ The skill reviews Description, Delegation, Discernment, Diligence, and Adaptive 
 
 Copy and send this message to your agent:
 
-> Please install the AI Fluency Review skill from https://github.com/Cornell-AI-Ready-Workforce/ai-fluency-review-skill/tree/main/skills/ai-fluency-review.
+> Please install the AI Fluency Review skill from https://github.com/Cornell-AI-Ready-Workforce/ai-fluency-review-skill
 >
 > After installation, use the skill to create my private, personalized AI-fluency report.
 
