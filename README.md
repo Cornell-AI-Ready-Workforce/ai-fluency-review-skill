@@ -1,4 +1,4 @@
-# ai-fluency-review-skill
+# AI Fluency Review Skill
 
 A minimal, vendor-neutral skill for creating a warm, private AI Use Report from records a person explicitly authorizes.
 
