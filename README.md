@@ -6,7 +6,18 @@ The skill reviews Description, Delegation, Discernment, Diligence, and Adaptive 
 
 ## Install
 
-Copy `skills/ai-fluency-review` into your agent host’s skill directory. The package contains only `SKILL.md` and one static HTML design template; it has no renderer, schema, tests, or application code.
+```sh
+npx skills add Cornell-AI-Ready-Workforce/ai-fluency-review-skill -g
+```
+
+The installer detects supported agent hosts and installs the skill globally. Start a new agent session after installation.
+
+<details>
+<summary>Manual installation</summary>
+
+Copy `skills/ai-fluency-review` into your agent host’s skill directory.
+
+</details>
 
 ## Use
 
