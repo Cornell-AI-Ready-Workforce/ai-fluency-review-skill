@@ -10,9 +10,7 @@ Copy and send this message to your agent:
 
 > Please install the AI Fluency Review skill from https://github.com/Cornell-AI-Ready-Workforce/ai-fluency-review-skill/tree/main/skills/ai-fluency-review.
 >
-> Use this app’s built-in skill or plugin installer. Do not ask me to use Terminal. If you need permission to download or install the skill, ask me in the app. Confirm when the skill is persistently installed. If this app cannot install custom skills, say so clearly and give me the exact click-only steps available in this app.
->
-> After installation, use the skill to create my private, personalized AI-fluency report. Before reading anything, ask me which AI-use records and time period I authorize.
+> After installation, use the skill to create my private, personalized AI-fluency report.
 
 <details>
 <summary>Advanced: install from Terminal</summary>
