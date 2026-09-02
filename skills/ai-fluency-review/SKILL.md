@@ -2,7 +2,7 @@
 name: ai-fluency-review
 description: Create a warm, private AI Fluency Review from AI-use records the user explicitly authorizes. Use only when the user directly requests this review or names the skill. Never use it to rank people or make employment decisions.
 metadata:
-  version: "0.5.0"
+  version: "0.5.1"
 ---
 
 # AI Fluency Review
@@ -57,8 +57,8 @@ For the template’s visual segments, map the four-D labels to levels 1–5 in t
 
 ## Evidence rules
 
-- Inventory the confirmed sources before selecting examples. Assign evidence to periods by the timestamps of the messages inside a record, never by file modification time; a record that spans both periods contributes to both. Review all when feasible; otherwise sample evenly across periods and contexts, read the participant’s own turns first in large records, and disclose the limit.
-- Automated traffic such as tool results, subagent transcripts, and messages between agents is evidence of delegation, not of the participant’s writing. Judge evidence volume by turns the participant wrote.
+- Inventory the confirmed sources before selecting examples. Assign evidence to periods by the timestamps of the messages inside a record, never by file modification time; a record that spans both periods contributes to both. Counting records with a script is inventory, not review. Read all records when feasible; otherwise sample evenly across periods and contexts, read the participant’s own turns first in large records, and disclose the limit.
+- A participant-written turn is a message the participant typed. Anything the host places in the participant’s slot is not one: tool results, task or system notifications, compaction summaries, messages relayed from other agents, expanded commands, and shell commands run through the assistant. Those are evidence of delegation, not of the participant’s writing. Judge evidence volume by participant-written turns.
 - Attribute human, AI, mixed, and unknown actions separately. AI-only or unattributed actions cannot raise the participant’s rating.
 - Use dated, participant-readable examples. Include material counterexamples and missing evidence.
 - Say “reported, not visible” when a self-report is not corroborated. Never translate missing observation into lack of skill.
@@ -84,6 +84,6 @@ Use this structure:
 4. **Details** — five closed drawers. Each drawer shows what was observed, relevant limits or inconsistency (for Adaptive Flexibility, what changed), a real “You said” example from the authorized records when available, a concrete “Try next” version, and one or two dated evidence examples. Do not fabricate quotations.
 5. **About this review** — sources, periods, inventory or sampling, attribution limits, unavailable evidence, and which comparison path was used.
 
-A record is one session or conversation with participant activity in the confirmed period; transcripts nested under a session belong to that record. The record count is the full inventory, not the number read. Saved memory is listed under About this review and not counted. A context is one project, workspace, or distinct task setting. Evidence strength is Strong when the full inventory was reviewed across several contexts, Moderate when a sample spanned several contexts or one context was read in full, and Limited when it rests on a single-context sample, few records, or self-reports.
+A record is one session or conversation with participant activity in the confirmed period; transcripts nested under a session belong to that record. The record count is the full inventory, not the number read. Saved memory is listed under About this review and not counted. A context is one project directory or workspace, even when it holds unrelated conversations. Evidence strength is Strong when the full inventory was reviewed across several contexts, Moderate when a sample spanned several contexts or one context was read in full, and Limited when it rests on a single-context sample, few records, or self-reports.
 
 Write directly to “you” in warm, plain language. Prefer “more consistent,” “no clear change visible,” and “not enough evidence” over judgmental language. Make the HTML semantic, keyboard-readable, responsive without horizontal scrolling, usable without JavaScript, and compatible with light and dark themes.
