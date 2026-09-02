@@ -41,7 +41,7 @@ These locations are hints. If a default is not readable on this host, say what y
 2. Otherwise, split the confirmed period into two equal adjacent halves: the more recent half is the current period and the earlier half is the baseline. Compare only sufficiently similar tasks, opportunities, and sources.
 3. If the baseline holds fewer than twenty turns the participant wrote, or no task type shared with the current period, ask the user whether to widen the period or add a source before concluding. If they decline, do not claim change. Say: “We need a little more AI-use history before we can show change. Try a few more AI-assisted tasks, then review again.”
 
-Never force a difference, compare counts across windows of unequal length as if they were rates, or infer improvement from more activity alone.
+Never force a difference or infer improvement from more activity alone; uneven use from day to day is expected. When a previous review covered a period of different length, compare habits, not counts.
 
 ## Five areas
 
