@@ -2,7 +2,7 @@
 name: ai-fluency-review
 description: Create a warm, private AI Fluency Review from AI-use records the user explicitly authorizes. Use only when the user directly requests this review or names the skill. Never use it to rank people or make employment decisions.
 metadata:
-  version: "0.4.1"
+  version: "0.4.2"
 ---
 
 # AI Fluency Review
@@ -39,7 +39,7 @@ These locations are hints. If a default is not readable on this host, say what y
 
 1. If a previous AI Fluency Review is among the sources, compare the current evidence directly with that report. Distinguish findings recorded in the report from behavior visible in underlying records.
 2. Otherwise, split the confirmed period into two equal adjacent halves: the more recent half is the current period and the earlier half is the baseline. Compare only sufficiently similar tasks, opportunities, and sources.
-3. If the baseline holds fewer than five comparable records, ask the user whether to widen the period or add a source before concluding. If they decline, do not claim change. Say: “We need a little more AI-use history before we can show change. Try a few more AI-assisted tasks, then review again.”
+3. If the baseline holds fewer than twenty turns the participant wrote, or no task type shared with the current period, ask the user whether to widen the period or add a source before concluding. If they decline, do not claim change. Say: “We need a little more AI-use history before we can show change. Try a few more AI-assisted tasks, then review again.”
 
 Never force a difference, compare counts across windows of unequal length as if they were rates, or infer improvement from more activity alone.
 
@@ -57,7 +57,8 @@ For the template’s visual segments, map the four-D labels to levels 1–5 in t
 
 ## Evidence rules
 
-- Inventory the confirmed sources before selecting examples. Review all when feasible; otherwise use a neutral sample across dates and task contexts and disclose the limit.
+- Inventory the confirmed sources before selecting examples. Assign evidence to periods by the timestamps of the messages inside a record, never by file modification time; a record that spans both periods contributes to both. Review all when feasible; otherwise sample evenly across periods and contexts, read the participant’s own turns first in large records, and disclose the limit.
+- Automated traffic such as tool results, subagent transcripts, and messages between agents is evidence of delegation, not of the participant’s writing. Judge evidence volume by turns the participant wrote.
 - Attribute human, AI, mixed, and unknown actions separately. AI-only or unattributed actions cannot raise the participant’s rating.
 - Use dated, participant-readable examples. Include material counterexamples and missing evidence.
 - Say “reported, not visible” when a self-report is not corroborated. Never translate missing observation into lack of skill.
@@ -83,6 +84,6 @@ Use this structure:
 4. **Details** — five closed drawers. Each drawer shows what was observed, relevant limits or inconsistency (for Adaptive Flexibility, what changed), a real “You said” example from the authorized records when available, a concrete “Try next” version, and one or two dated evidence examples. Do not fabricate quotations.
 5. **About this review** — sources, periods, inventory or sampling, attribution limits, unavailable evidence, and which comparison path was used.
 
-A record is one session or conversation in the confirmed period; the record count is the full inventory, not the number read. Saved memory is listed under About this review and not counted. A context is one project, workspace, or distinct task setting. Evidence strength is Strong when the full inventory was reviewed across several contexts, Moderate when a sample spanned several contexts or one context was read in full, and Limited when it rests on a single-context sample, few records, or self-reports.
+A record is one session or conversation with participant activity in the confirmed period; transcripts nested under a session belong to that record. The record count is the full inventory, not the number read. Saved memory is listed under About this review and not counted. A context is one project, workspace, or distinct task setting. Evidence strength is Strong when the full inventory was reviewed across several contexts, Moderate when a sample spanned several contexts or one context was read in full, and Limited when it rests on a single-context sample, few records, or self-reports.
 
 Write directly to “you” in warm, plain language. Prefer “more consistent,” “no clear change visible,” and “not enough evidence” over judgmental language. Make the HTML semantic, keyboard-readable, responsive without horizontal scrolling, usable without JavaScript, and compatible with light and dark themes.
