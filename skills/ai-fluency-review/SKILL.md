@@ -2,7 +2,7 @@
 name: ai-fluency-review
 description: Create a warm, private AI Fluency Review from AI-use records the user explicitly authorizes. Use only when the user directly requests this review or names the skill. Never use it to rank people or make employment decisions.
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # AI Fluency Review
@@ -39,9 +39,9 @@ These locations are hints. If a default is not readable on this host, say what y
 
 1. If a previous AI Fluency Review is among the sources, compare the current evidence directly with that report. Distinguish findings recorded in the report from behavior visible in underlying records.
 2. Otherwise, split the confirmed period into two equal adjacent halves: the more recent half is the current period and the earlier half is the baseline. Compare only sufficiently similar tasks, opportunities, and sources.
-3. If the baseline has too little comparable evidence, ask the user whether to widen the period or add a source before concluding. If they decline, do not claim change. Say: “We need a little more AI-use history before we can show change. Try a few more AI-assisted tasks, then review again.”
+3. If the baseline holds fewer than five comparable records, ask the user whether to widen the period or add a source before concluding. If they decline, do not claim change. Say: “We need a little more AI-use history before we can show change. Try a few more AI-assisted tasks, then review again.”
 
-Never force a difference, treat unequal windows as a rate comparison, or infer improvement from more activity alone.
+Never force a difference, compare counts across windows of unequal length as if they were rates, or infer improvement from more activity alone.
 
 ## Five areas
 
@@ -63,7 +63,7 @@ For the template’s visual segments, map the four-D labels to levels 1–5 in t
 - Say “reported, not visible” when a self-report is not corroborated. Never translate missing observation into lack of skill.
 - Describe Adaptive Flexibility only from comparable earlier and current evidence. If comparison evidence is absent or materially incompatible, use Not enough evidence.
 - Choose one overall coaching focus and one action to try. Every drawer’s “Try next” example must demonstrate that same action in its area, not introduce another assignment.
-- Use a quotation only in the area it directly supports. If no area-relevant quotation exists, say: “No area-relevant quotation was available.”
+- Use a quotation only in the area it directly supports. A quotation is at most two sentences of the participant’s own words; anything longer, and any assistant output, counts as raw transcript and stays out. If no area-relevant quotation exists, say: “No area-relevant quotation was available.”
 
 ## Report
 
@@ -77,12 +77,12 @@ The finished report must remain self-contained, with no remote scripts, fonts, f
 
 Use this structure:
 
-1. **Personalized report title** — use the `REPORT_TITLE` rule above, followed by generated date, current period, comparison source or baseline period, record count, context count, and evidence strength. Do not add an eyebrow, tagline, or introductory description.
+1. **Personalized report title** — use the `REPORT_TITLE` rule above, followed by generated date, current period, comparison source or baseline period, record count, context count, and evidence strength. Set `COMPARISON_LABEL` to “Compared with” when a previous review was used and “Baseline” otherwise. Do not add an eyebrow, tagline, or introductory description.
 2. **What stands out** — strongest habit, current focus, and the one concrete action to try next.
 3. **Five areas** — one compact row for each area.
-4. **Details** — five closed drawers. Each drawer shows what was observed, relevant limits or inconsistency, a real “You said” example from the authorized records when available, a concrete “Try next” version, and one or two dated evidence examples. Do not fabricate quotations.
+4. **Details** — five closed drawers. Each drawer shows what was observed, relevant limits or inconsistency (for Adaptive Flexibility, what changed), a real “You said” example from the authorized records when available, a concrete “Try next” version, and one or two dated evidence examples. Do not fabricate quotations.
 5. **About this review** — sources, periods, inventory or sampling, attribution limits, unavailable evidence, and which comparison path was used.
 
-A record is one session or conversation. A context is one project, workspace, or distinct task setting. Evidence strength is Strong when the full inventory was reviewed across several contexts, Moderate when it was sampled or came from one context, and Limited when it rests on few records or self-reports.
+A record is one session or conversation in the confirmed period; the record count is the full inventory, not the number read. Saved memory is listed under About this review and not counted. A context is one project, workspace, or distinct task setting. Evidence strength is Strong when the full inventory was reviewed across several contexts, Moderate when a sample spanned several contexts or one context was read in full, and Limited when it rests on a single-context sample, few records, or self-reports.
 
 Write directly to “you” in warm, plain language. Prefer “more consistent,” “no clear change visible,” and “not enough evidence” over judgmental language. Make the HTML semantic, keyboard-readable, responsive without horizontal scrolling, usable without JavaScript, and compatible with light and dark themes.
