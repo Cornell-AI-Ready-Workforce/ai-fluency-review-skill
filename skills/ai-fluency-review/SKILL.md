@@ -2,7 +2,7 @@
 name: ai-fluency-review
 description: Create a warm, private AI Fluency Review from AI-use records the user explicitly authorizes. Use only when the user directly requests this review or names the skill. Never use it to rank people or make employment decisions.
 metadata:
-  version: "0.6.0"
+  version: "0.6.1"
 ---
 
 # AI Fluency Review
@@ -60,7 +60,7 @@ For the template’s visual segments, map the four-D labels to levels 1–5 in t
 ## Evidence rules
 
 - Inventory the confirmed sources before selecting examples. Assign evidence to periods by the timestamps of the messages inside a record, never by file modification time; a record that spans both periods contributes to both. Counting records with a script is inventory, not review. Read all records when feasible; otherwise sample evenly across periods and contexts, read the participant’s own turns first in large records, and disclose the limit.
-- A participant-written turn is a message the participant typed. Anything the host places in the participant’s slot is not one: tool results, task or system notifications, compaction summaries, messages relayed from other agents, expanded commands, and shell commands run through the assistant. Those are evidence of delegation, not of the participant’s writing. Judge evidence volume by participant-written turns.
+- A participant-written turn is a message the participant typed. Anything the host places in the participant’s slot is not one: tool results, task or system notifications, compaction summaries, messages relayed from other agents, the expanded text of a command, and shell commands run through the assistant. A command the participant typed counts as a turn; the text the host expands it into does not. Those are evidence of delegation, not of the participant’s writing. Judge evidence volume by participant-written turns.
 - Attribute human, AI, mixed, and unknown actions separately. AI-only or unattributed actions cannot raise the participant’s rating.
 - Use dated, participant-readable examples. Include material counterexamples and missing evidence.
 - Say “reported, not visible” when a self-report is not corroborated. Never translate missing observation into lack of skill.
