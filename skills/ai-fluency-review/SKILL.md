@@ -2,7 +2,7 @@
 name: ai-fluency-review
 description: Create a warm, private AI Fluency Review from AI-use records the user explicitly authorizes. Use only when the user directly requests this review or names the skill. Never use it to rank people or make employment decisions.
 metadata:
-  version: "0.4.2"
+  version: "0.5.0"
 ---
 
 # AI Fluency Review
@@ -72,13 +72,13 @@ Copy [assets/report-template.html](assets/report-template.html) to `ai_fluency_r
 
 HTML-escape every participant-derived value before substitution. All placeholders accept text only except `*_EVIDENCE_ITEMS` and `ABOUT_ITEMS`; those may contain controlled `<li>` elements whose contents are still escaped. Use “Not available” for unknown metadata instead of guessing.
 
-When the participant’s preferred name is explicitly available from the authorized conversation or profile, set `REPORT_TITLE` to “[Preferred name], this is your AI Fluency Review.” Otherwise use “This is your AI Fluency Review.” Never infer a name from a username, email address, filesystem path, or other ambiguous metadata.
+Set `REPORT_TITLE` to “[Preferred name], here’s how you’ve been using AI over the last 30 days.” Use “over the last N days” for another whole-day count, or “from [start] to [end]” for a period the user gave as dates. When no preferred name is explicitly available from the authorized conversation or profile, drop the name and capitalize “Here’s”. Never infer a name from a username, email address, filesystem path, or other ambiguous metadata.
 
 The finished report must remain self-contained, with no remote scripts, fonts, frameworks, analytics, raw transcripts, secret values, private identifiers, composite score, percentile, credential, ranking, or model confidence.
 
 Use this structure:
 
-1. **Personalized report title** — use the `REPORT_TITLE` rule above, followed by generated date, current period, comparison source or baseline period, record count, context count, and evidence strength. Set `COMPARISON_LABEL` to “Compared with” when a previous review was used and “Baseline” otherwise. Do not add an eyebrow, tagline, or introductory description.
+1. **Personalized report title** — the label “AI Fluency Review” above the title, then the `REPORT_TITLE` rule above, followed by generated date, current period, comparison source or baseline period, record count, context count, and evidence strength. Set `COMPARISON_LABEL` to “Compared with” when a previous review was used and “Baseline” otherwise. Do not add a tagline or introductory description.
 2. **What stands out** — strongest habit, current focus, and the one concrete action to try next.
 3. **Five areas** — one compact row for each area.
 4. **Details** — five closed drawers. Each drawer shows what was observed, relevant limits or inconsistency (for Adaptive Flexibility, what changed), a real “You said” example from the authorized records when available, a concrete “Try next” version, and one or two dated evidence examples. Do not fabricate quotations.
