@@ -2,7 +2,7 @@
 name: ai-fluency-review
 description: Create a warm, private AI Fluency Review from AI-use records the user explicitly authorizes. Use only when the user directly requests this review or names the skill. Never use it to rank people or make employment decisions.
 metadata:
-  version: "0.5.2"
+  version: "0.6.0"
 ---
 
 # AI Fluency Review
@@ -13,7 +13,7 @@ Create one evidence-linked coaching report about observable AI-use habits. Asses
 
 Before reading any record, ask these two questions in one message and offer the defaults:
 
-1. **Sources.** Default: this assistant’s own past sessions and saved memory, across all projects on this machine, plus any previous AI Fluency Review the user provides.
+1. **Sources.** Default: this assistant’s own past sessions and saved memory, across all projects on this machine.
 2. **Period.** Default: the last 30 days.
 
 A reply of “yes” or “defaults” accepts both. Skip a question the user already answered.
@@ -35,13 +35,15 @@ These locations are hints. If a default is not readable on this host, say what y
 - Do not read, retain, share, or modify anything outside the confirmed sources and period.
 - Keep the report private unless the user explicitly asks to share it.
 
-## Comparison order
+## Comparison
 
-1. If a previous AI Fluency Review is among the sources, compare the current evidence directly with that report. Distinguish findings recorded in the report from behavior visible in underlying records.
-2. Otherwise, split the confirmed period into two equal adjacent halves: the more recent half is the current period and the earlier half is the baseline. Compare only sufficiently similar tasks, opportunities, and sources.
-3. If the baseline holds fewer than twenty turns the participant wrote, or no task type shared with the current period, ask the user whether to widen the period or add a source before concluding. If they decline, do not claim change. Say: “We need a little more AI-use history before we can show change. Try a few more AI-assisted tasks, then review again.”
+Split the confirmed period into two equal adjacent halves: the more recent half is the current period and the earlier half is the baseline. Compare only sufficiently similar tasks, opportunities, and sources. Never compare with an earlier AI Fluency Review inside the report, even when one is available.
 
-Never force a difference or infer improvement from more activity alone; uneven use from day to day is expected. When a previous review covered a period of different length, compare habits, not counts.
+If the baseline holds fewer than twenty turns the participant wrote, or no task type shared with the current period, ask the user whether to widen the period or add a source before concluding. If they decline, do not claim change. Say: “We need a little more AI-use history before we can show change. Try a few more AI-assisted tasks, then review again.”
+
+Never force a difference or infer improvement from more activity alone; uneven use from day to day is expected.
+
+After delivering the report, offer once to compare it with an earlier AI Fluency Review if the user has one. Do that only when asked: report the differences per area in the conversation, distinguishing findings recorded in the earlier review from behavior visible in records, and do not regenerate the report.
 
 ## Five areas
 
@@ -78,11 +80,11 @@ The finished report must remain self-contained, with no remote scripts, fonts, f
 
 Use this structure:
 
-1. **Personalized report title** — the label “AI Fluency Review” above the title, then the `REPORT_TITLE` rule above, followed by generated date, current period, comparison source or baseline period, record count, context count, and evidence strength. Set `COMPARISON_LABEL` to “Compared with” when a previous review was used and “Baseline” otherwise. Do not add a tagline or introductory description.
+1. **Personalized report title** — the label “AI Fluency Review” above the title, then the `REPORT_TITLE` rule above, followed by generated date, current period, baseline period, record count, context count, and evidence strength. Do not add a tagline or introductory description.
 2. **What stands out** — strongest habit, current focus, and the one concrete action to try next.
 3. **Five areas** — one compact row for each area.
 4. **Details** — five closed drawers. Each drawer shows what was observed, relevant limits or inconsistency (for Adaptive Flexibility, what changed), a real “You said” example from the authorized records when available, a concrete “Try next” version, and one or two dated evidence examples. Do not fabricate quotations.
-5. **About this review** — sources, periods, inventory or sampling, attribution limits, unavailable evidence, and which comparison path was used.
+5. **About this review** — sources, periods, inventory or sampling, attribution limits, and unavailable evidence.
 
 A record is one session or conversation with participant activity in the confirmed period; transcripts nested under a session belong to that record. The record count is the full inventory, not the number read. Saved memory is listed under About this review and not counted. A context is one project directory or workspace, even when it holds unrelated conversations. Evidence strength is Strong when the full inventory was reviewed across several contexts, Moderate when a sample spanned several contexts or one context was read in full, and Limited when it rests on a single-context sample, few records, or self-reports.
 

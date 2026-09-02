@@ -19,7 +19,7 @@ If your assistant cannot open links, paste the contents of [SKILL.md](skills/ai-
 3. Thirty days of history takes ten to thirty minutes.
 4. You get one HTML file, `ai_fluency_review.html`, saved where the assistant can write or returned in the chat. It shows your strongest habit, your current focus, one action to try next, one row per habit, and dated examples in your own words, with a note on what was read and what was not.
 
-Run it again in a month and give it the earlier file to compare against.
+Run it again in a month. Afterwards, ask the assistant to compare the new review with the earlier one.
 
 <details>
 <summary>Install from a terminal</summary>
