@@ -1,51 +1,36 @@
 # AI Fluency Review Skill
 
-A minimal, vendor-neutral skill for creating a warm, private AI Fluency Review from records a person explicitly authorizes.
+A private coaching report on how you work with AI, built by your own assistant from your own past sessions. It reviews five habits from the AI Fluency Framework: Description, Delegation, Discernment, Diligence, and Adaptive Flexibility.
 
-The skill reviews Description, Delegation, Discernment, Diligence, and Adaptive Flexibility. It first asks two setup questions and offers defaults: your assistant’s own past sessions and memory, and the last 30 days. It compares directly with a previous review when available; otherwise it compares the two halves of the chosen period.
+It is written for you. It is not for ranking people or making employment decisions.
 
-## Install and create your review
+## Create your review
 
-Copy and send this message to your agent:
+Copy this message and send it to Claude, ChatGPT, or any other AI assistant:
 
-> Please install the AI Fluency Review skill from https://github.com/Cornell-AI-Ready-Workforce/ai-fluency-review-skill
->
-> After installation, use the skill to create my private, personalized AI Fluency Review.
+> Please install the AI Fluency Review skill from https://github.com/Cornell-AI-Ready-Workforce/ai-fluency-review-skill. If you cannot install skills, open that link, read `skills/ai-fluency-review/SKILL.md` and its report template, and follow them. Then create my private AI Fluency Review.
+
+If your assistant cannot open links, paste the contents of [SKILL.md](skills/ai-fluency-review/SKILL.md) and [report-template.html](skills/ai-fluency-review/assets/report-template.html) into the chat instead, followed by: "Follow the pasted skill to create my private AI Fluency Review."
+
+## What happens next
+
+1. The assistant asks two questions and suggests answers: which records to use, with its own past conversations and saved memory as the default, and which period, with the last 30 days as the default. Reply "defaults" or change either.
+2. It reads only what you confirmed. It does not open another AI tool's history unless you name it. Your records travel the same way as anything else you say to that assistant, and nowhere else.
+3. Thirty days of history takes ten to thirty minutes.
+4. You get one HTML file, `ai_fluency_review.html`, saved where the assistant can write or returned in the chat. It shows your strongest habit, your current focus, one action to try next, one row per habit, and dated examples in your own words, with a note on what was read and what was not.
+
+Run it again in a month and give it the earlier file to compare against.
 
 <details>
-<summary>Advanced: install from Terminal</summary>
+<summary>Install from a terminal</summary>
 
 ```sh
 npx skills add Cornell-AI-Ready-Workforce/ai-fluency-review-skill -g
 ```
 
-The installer detects supported agent hosts and installs the skill globally. Start a new agent session after installation.
+Or copy `skills/ai-fluency-review` into your agent's skill directory. Start a new session, then send: "Use the ai-fluency-review skill to create my private AI Fluency Review."
 
 </details>
-
-<details>
-<summary>Manual installation</summary>
-
-Copy `skills/ai-fluency-review` into your agent host’s skill directory.
-
-</details>
-
-<details>
-<summary>No install (claude.ai, Claude Desktop, ChatGPT)</summary>
-
-Paste the contents of [SKILL.md](skills/ai-fluency-review/SKILL.md) and [report-template.html](skills/ai-fluency-review/assets/report-template.html) into the chat, then send:
-
-> Follow the pasted AI Fluency Review skill to create my private, personalized AI Fluency Review.
-
-</details>
-
-## Use
-
-```text
-Use the ai-fluency-review skill to create my private AI Fluency Review.
-```
-
-The skill creates one self-contained HTML report.
 
 ## License
 

@@ -2,7 +2,7 @@
 name: ai-fluency-review
 description: Create a warm, private AI Fluency Review from AI-use records the user explicitly authorizes. Use only when the user directly requests this review or names the skill. Never use it to rank people or make employment decisions.
 metadata:
-  version: "0.5.1"
+  version: "0.5.2"
 ---
 
 # AI Fluency Review
@@ -68,7 +68,7 @@ For the template’s visual segments, map the four-D labels to levels 1–5 in t
 
 ## Report
 
-Copy [assets/report-template.html](assets/report-template.html) to `ai_fluency_review.html` and replace every `{{PLACEHOLDER}}`. Keep its structure and styles unless the user requests a design change. Do not leave unresolved placeholders or sample content. Tell the user the path you wrote. If the host cannot write files, return the complete HTML as one downloadable file or one code block.
+Copy [assets/report-template.html](assets/report-template.html) to `ai_fluency_review.html` and replace every `{{PLACEHOLDER}}`. When this skill was read from the web rather than installed, fetch the template from the same repository. Keep its structure and styles unless the user requests a design change. Do not leave unresolved placeholders or sample content. Tell the user the path you wrote. If the host cannot write files, return the complete HTML as one downloadable file or one code block.
 
 HTML-escape every participant-derived value before substitution. All placeholders accept text only except `*_EVIDENCE_ITEMS` and `ABOUT_ITEMS`; those may contain controlled `<li>` elements whose contents are still escaped. Use “Not available” for unknown metadata instead of guessing.
 
