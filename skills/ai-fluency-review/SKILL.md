@@ -2,7 +2,7 @@
 name: ai-fluency-review
 description: Create a warm, private AI Fluency Review from AI-use records the user explicitly authorizes. Use only when the user directly requests this review or names the skill. Never use it to rank people or make employment decisions.
 metadata:
-  version: "0.6.1"
+  version: "0.6.2"
 ---
 
 # AI Fluency Review
@@ -11,9 +11,11 @@ Create one evidence-linked coaching report about observable AI-use habits. Asses
 
 ## Setup questions
 
-Before reading any record, ask these two questions in one message and offer the defaults:
+Use sources and periods the user already specified. A request to review the substantive AI work visible in this conversation does not require another source or period question. If no source was specified and substantive task evidence is visible, review that task.
 
-1. **Sources.** Default: this assistant’s own past sessions and saved memory, across all projects on this machine.
+For a review of additional history, ask only unanswered questions before opening records and offer these defaults:
+
+1. **Sources.** Default: this assistant’s own past sessions and saved memory available in this host.
 2. **Period.** Default: the last 30 days.
 
 A reply of “yes” or “defaults” accepts both. Skip a question the user already answered.
@@ -26,7 +28,15 @@ Do not list, open, or read another tool’s history to discover sources. Add ano
 | Codex CLI | `~/.codex/sessions/` | `~/.codex/memories/` |
 | claude.ai, Claude Desktop, ChatGPT | built-in chat history search, when available | built-in memory, when available |
 
-These locations are hints. If a default is not readable on this host, say what you can read instead and ask the user to point to files, paste conversations, or upload the host’s data export. Never stop with an error.
+These locations are hints, not evidence of access. Check the actual tools available in this session; use native chat retrieval when it is available and authorized. Do not search sandbox directories to diagnose web or desktop chat access, or infer an account's memory setting from missing files. Memory summaries are not full conversation transcripts.
+
+If history is unavailable:
+
+- When a substantive current task is visible and authorized, state the access limit and review that task now. Do not require exports, copied conversations, or another source question.
+- When the user explicitly requires only a history review or excludes the current conversation, explain the missing access and ask whether they want a narrower review. Do not silently change their scope.
+- When no substantive task is visible, ask which real task they want to review. Recommend invoking the skill inside an existing task conversation, or working on a task here, so no transcript transfer is needed. Do not create a personal report from the setup exchange alone.
+
+Exports and named local records are optional sources when the user chooses them. A skill cannot enable a missing history tool.
 
 ## Permission
 
@@ -36,6 +46,8 @@ These locations are hints. If a default is not readable on this host, say what y
 - Keep the report private unless the user explicitly asks to share it.
 
 ## Comparison
+
+For a current-task review, skip the history-comparison rules below: do not require an earlier baseline, extra turns, or additional sources. State that baseline and change were not assessed. Use the actual task dates when available and identify the reviewed conversation rather than claiming coverage of the requested history. Keep the existing report template.
 
 Split the confirmed period into two equal adjacent halves: the more recent half is the current period and the earlier half is the baseline. Compare only sufficiently similar tasks, opportunities, and sources. Never compare with an earlier AI Fluency Review inside the report, even when one is available.
 
@@ -74,7 +86,7 @@ Copy [assets/report-template.html](assets/report-template.html) to `ai_fluency_r
 
 HTML-escape every participant-derived value before substitution. All placeholders accept text only except `*_EVIDENCE_ITEMS` and `ABOUT_ITEMS`; those may contain controlled `<li>` elements whose contents are still escaped. Use “Not available” for unknown metadata instead of guessing.
 
-Set `REPORT_TITLE` to “[Preferred name], here’s how you’ve been using AI over the last 30 days.” Use “over the last N days” for another whole-day count, or “from [start] to [end]” for a period the user gave as dates. When no preferred name is explicitly available from the authorized conversation or profile, drop the name and capitalize “Here’s”. Never infer a name from a username, email address, filesystem path, or other ambiguous metadata.
+For a current-task review, set `REPORT_TITLE` to “[Preferred name], here’s how you worked with AI on this task.” For a history review, use “[Preferred name], here’s how you’ve been using AI over the last 30 days.” Use “over the last N days” for another whole-day count, or “from [start] to [end]” for a period the user gave as dates. When no preferred name is explicitly available from the authorized conversation or profile, drop the name and capitalize “Here’s”. Never infer a name from a username, email address, filesystem path, or other ambiguous metadata.
 
 The finished report must remain self-contained, with no remote scripts, fonts, frameworks, analytics, raw transcripts, secret values, private identifiers, composite score, percentile, credential, ranking, or model confidence.
 

@@ -1,22 +1,22 @@
 # AI Fluency Review Skill
 
-A private coaching report on how you work with AI, built by your own assistant from your own past sessions. It reviews five habits from the AI Fluency Framework: Description, Delegation, Discernment, Diligence, and Adaptive Flexibility.
+A private coaching report on how you work with AI, built by your own assistant from your current task or accessible past sessions. It reviews five habits from the AI Fluency Framework: Description, Delegation, Discernment, Diligence, and Adaptive Flexibility.
 
 It is written for you. It is not for ranking people or making employment decisions.
 
 ## Create your review
 
-Copy this message and send it to Claude, ChatGPT, or any other AI assistant:
+Open a conversation where you have worked with AI, then send this message:
 
-> Please install the AI Fluency Review skill from https://github.com/Cornell-AI-Ready-Workforce/ai-fluency-review-skill. If you cannot install skills, open that link, read `skills/ai-fluency-review/SKILL.md` and its report template, and follow them. Then create my private AI Fluency Review.
+> Open https://github.com/Cornell-AI-Ready-Workforce/ai-fluency-review-skill, read `skills/ai-fluency-review/SKILL.md` and its report template, and create my private AI Fluency Review. You may use this conversation and your own available past chats with me from the last 30 days. If past chats are unavailable, review the task in this conversation without asking me to export or copy old chats.
 
 If your assistant cannot open links, paste the contents of [SKILL.md](skills/ai-fluency-review/SKILL.md) and [report-template.html](skills/ai-fluency-review/assets/report-template.html) into the chat instead, followed by: "Follow the pasted skill to create my private AI Fluency Review."
 
 ## What happens next
 
-1. The assistant asks two questions and suggests answers: which records to use, with its own past conversations and saved memory as the default, and which period, with the last 30 days as the default. Reply "defaults" or change either.
+1. The assistant checks whether its tools can retrieve the history you authorized. It asks about sources or dates only if you have not already specified them. Installation does not add history access.
 2. It reads only what you confirmed. It does not open another AI tool's history unless you name it. Your records travel the same way as anything else you say to that assistant, and nowhere else.
-3. Thirty days of history takes ten to thirty minutes.
+3. If history is unavailable, it reviews the current task and states that limit. If this is an empty chat, it asks which task to review; you can run the skill in an existing task conversation without transferring transcripts. A review of one task does not establish change over a month.
 4. You get one HTML file, `ai_fluency_review.html`, saved where the assistant can write or returned in the chat. It shows your strongest habit, your current focus, one action to try next, one row per habit, and dated examples in your own words, with a note on what was read and what was not.
 
 Run it again in a month. Afterwards, ask the assistant to compare the new review with the earlier one.
