@@ -1,12 +1,12 @@
 # AI Fluency Review Skill
 
-A private coaching report on how you work with AI, built by your own assistant from your current task or accessible past sessions. It reviews five habits from the AI Fluency Framework: Description, Delegation, Discernment, Diligence, and Adaptive Flexibility.
+A private coaching report on how you work with AI, built by your own assistant from your accessible past sessions, or from your current task when history cannot be read. It reviews five habits from the AI Fluency Framework: Description, Delegation, Discernment, Diligence, and Adaptive Flexibility.
 
 It is written for you. It is not for ranking people or making employment decisions.
 
 ## Create your review
 
-Open a conversation where you have worked with AI, then send this message:
+In any chat, new or existing, send this message:
 
 > Open https://github.com/Cornell-AI-Ready-Workforce/ai-fluency-review-skill, read `skills/ai-fluency-review/SKILL.md` and its report template, and create my private AI Fluency Review. You may use this conversation and your own available past chats with me from the last 30 days. If past chats are unavailable, review the task in this conversation without asking me to export or copy old chats.
 

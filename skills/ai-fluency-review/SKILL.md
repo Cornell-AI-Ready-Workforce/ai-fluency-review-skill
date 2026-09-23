@@ -2,7 +2,7 @@
 name: ai-fluency-review
 description: Create a warm, private AI Fluency Review from AI-use records the user explicitly authorizes. Use only when the user directly requests this review or names the skill. Never use it to rank people or make employment decisions.
 metadata:
-  version: "0.6.3"
+  version: "0.6.4"
 ---
 
 # AI Fluency Review
@@ -11,7 +11,7 @@ Create one evidence-linked coaching report about observable AI-use habits. Asses
 
 ## Setup questions
 
-Use sources and periods the user already specified. A request to review the substantive AI work visible in this conversation does not require another source or period question. If no source was specified and substantive task evidence is visible, review that task.
+Use sources and periods the user already specified. The default scope is the history below, whether the skill is invoked in a new chat or an existing one; the current conversation is one record inside that scope, never a substitute for it while history is readable. Only an explicit request to review just this conversation narrows the scope to it, and that request needs no source or period question.
 
 For a review of additional history, ask only unanswered questions before opening records and offer these defaults:
 
