@@ -2,7 +2,7 @@
 name: ai-fluency-review
 description: Create a warm, private AI Fluency Review from AI-use records the user explicitly authorizes. Use only when the user directly requests this review or names the skill. Never use it to rank people or make employment decisions.
 metadata:
-  version: "0.6.2"
+  version: "0.6.3"
 ---
 
 # AI Fluency Review
@@ -65,9 +65,20 @@ After delivering the report, offer once to compare it with an earlier AI Fluency
 - **Diligence — Finish responsibly:** source checking, privacy, testing, and durable completion.
 - **Adaptive Flexibility — Adapt your AI use:** meaningful differences between the comparison and current evidence, including whether a changed approach was checked and reused.
 
-For Description, Delegation, Discernment, and Diligence, use: Rarely observed, Emerging, Usually observed, Consistent, Reusable, or Not enough evidence. For Adaptive Flexibility, use a comparison label: More consistent, No clear change visible, Less consistent, or Not enough evidence. Evidence strength describes the evidence, never model confidence.
+For Description, Delegation, Discernment, and Diligence, use a quality label that describes how well the behavior was done where it mattered in the reviewed records: Excellent, Strong, Good, Developing, Focus, or Not yet observed. For Adaptive Flexibility, use a comparison label: More consistent, No clear change visible, Less consistent, or Not enough evidence. Evidence strength describes the evidence, never model confidence.
 
-For the template’s visual segments, map the four-D labels to levels 1–5 in the order listed above and map Not enough evidence to `none`. Map Adaptive Flexibility as More consistent = 4, No clear change visible = 3, Less consistent = 2, and Not enough evidence = `none`. These segments are visual summaries, not scores.
+| Label | Requires |
+| --- | --- |
+| Excellent | The behavior was done well in every relevant opportunity across more than one task, including at least one case where the person accepted a correct AI result after checking it or adapted the behavior to a new task. One task cannot earn Excellent. |
+| Strong | The behavior was done well where it mattered, with no material gap in the reviewed records. |
+| Good | The behavior was done and served the task, with one specific, minor gap to name. |
+| Developing | The behavior was partly done: a completed instance is visible and a material gap is also visible. Name both. |
+| Focus | The behavior was skipped or done poorly where it clearly mattered, shown by the person’s own visible decision. Silence alone never earns Focus. |
+| Not yet observed | No relevant opportunity, or only a plan, intention, or self-report without a visible completed action. |
+
+A plan or self-report never lowers a label; it is Not yet observed. A record that ends before a check completes is Not yet observed for that check. AI-only actions never raise a label.
+
+For the template’s visual segments, map the four-D labels as Excellent = 5, Strong = 4, Good = 3, Developing = 2, Focus = 1, and Not yet observed = `none`. Map Adaptive Flexibility as More consistent = 4, No clear change visible = 3, Less consistent = 2, and Not enough evidence = `none`. These segments are visual summaries, not scores.
 
 ## Evidence rules
 
@@ -100,4 +111,4 @@ Use this structure:
 
 A record is one session or conversation with participant activity in the confirmed period; transcripts nested under a session belong to that record. The record count is the full inventory, not the number read. Saved memory is listed under About this review and not counted. A context is one project directory or workspace, even when it holds unrelated conversations. Evidence strength is Strong when the full inventory was reviewed across several contexts, Moderate when a sample spanned several contexts or one context was read in full, and Limited when it rests on a single-context sample, few records, or self-reports.
 
-Write directly to “you” in warm, plain language. Prefer “more consistent,” “no clear change visible,” and “not enough evidence” over judgmental language. Make the HTML semantic, keyboard-readable, responsive without horizontal scrolling, usable without JavaScript, and compatible with light and dark themes.
+Write directly to “you” in warm, plain language. Prefer “more consistent,” “no clear change visible,” “not yet observed,” and “not enough evidence” over judgmental language; a Focus label names the visible decision, not the person. Make the HTML semantic, keyboard-readable, responsive without horizontal scrolling, usable without JavaScript, and compatible with light and dark themes.
