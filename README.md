@@ -1,6 +1,6 @@
 # AI Fluency Review Skill
 
-A private coaching report on how you work with AI, built by your own assistant from your accessible past sessions, or from your current task when history cannot be read. It reviews five habits from the AI Fluency Framework: Description, Delegation, Discernment, Diligence, and Adaptive Flexibility.
+A private coaching report on how you work with AI, built by your own assistant from your accessible past sessions, or from your current task when history cannot be read. It reviews the four habits of the AI Fluency Framework, Description, Delegation, Discernment, and Diligence, plus Adaptive Flexibility, this review’s own measure of change over time.
 
 It is written for you. It is not for ranking people or making employment decisions.
 
