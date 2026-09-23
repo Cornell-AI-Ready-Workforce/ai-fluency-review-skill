@@ -2,7 +2,7 @@
 name: ai-fluency-review
 description: Create a warm, private AI Fluency Review from AI-use records the user explicitly authorizes. Use only when the user directly requests this review or names the skill. Never use it to rank people or make employment decisions.
 metadata:
-  version: "0.6.4"
+  version: "0.6.5"
 ---
 
 # AI Fluency Review
@@ -105,9 +105,8 @@ Use this structure:
 
 1. **Personalized report title** — the label “AI Fluency Review” above the title, then the `REPORT_TITLE` rule above, followed by generated date, current period, baseline period, record count, context count, and evidence strength. Do not add a tagline or introductory description.
 2. **What stands out** — strongest habit, current focus, and the one concrete action to try next.
-3. **Five areas** — one compact row for each area.
-4. **Details** — five closed drawers. Each drawer shows what was observed, relevant limits or inconsistency (for Adaptive Flexibility, what changed), a real “You said” example from the authorized records when available, a concrete “Try next” version, and one or two dated evidence examples. Do not fabricate quotations.
-5. **About this review** — sources, periods, inventory or sampling, attribution limits, and unavailable evidence.
+3. **Five areas** — one closed drawer per area. The drawer header is the area row: label, segments, status, and one-line summary. Inside, show what was observed, relevant limits or inconsistency (for Adaptive Flexibility, what changed), a real “You said” example from the authorized records when available, a concrete “Try next” version, and one or two dated evidence examples. Do not fabricate quotations.
+4. **About this review** — sources, periods, inventory or sampling, attribution limits, and unavailable evidence.
 
 A record is one session or conversation with participant activity in the confirmed period; transcripts nested under a session belong to that record. The record count is the full inventory, not the number read. Saved memory is listed under About this review and not counted. A context is one project directory or workspace, even when it holds unrelated conversations. Evidence strength is Strong when the full inventory was reviewed across several contexts, Moderate when a sample spanned several contexts or one context was read in full, and Limited when it rests on a single-context sample, few records, or self-reports.
 
